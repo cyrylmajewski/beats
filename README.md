@@ -1,5 +1,5 @@
 # beats
-Beats landing page homework
+<h1>Beats landing page homework</h1>
 
 ФИО: Маевский Кирилл Викторович
 Наставник: Максим Иванов
