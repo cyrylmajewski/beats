@@ -1,4 +1,3 @@
-# beats
 <h1>Beats landing page homework</h1>
 <ul>
   <li>ФИО: Маевский Кирилл Викторович</li>
