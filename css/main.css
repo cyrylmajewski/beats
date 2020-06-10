@@ -31,7 +31,7 @@ html, body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 940px;
   margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@ ul li {
 
 .wrapper {
   overflow: hidden;
-  min-width: 1100px;
+  min-width: 940px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -71,11 +71,98 @@ ul li {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 21px;
+  margin-bottom: 83px;
 }
-
-.menu__list {
+.header .logo {
+  margin-right: 38px;
+}
+.header .menu__list {
   min-width: 638px;
   display: flex;
   justify-content: space-between;
+}
+.header .menu__item {
+  font-size: 16px;
+}
+.header .contact {
+  color: #000000;
+  font-size: 21px;
+  text-transform: uppercase;
+  font-style: normal;
+  margin-left: auto;
+}
+.header .contact__item {
+  display: flex;
+}
+.header .contact__icon {
+  margin-right: 2px;
+}
+
+.button {
+  padding: 17px 40px;
+  background: #e01f3d;
+  border-radius: 26px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main-screen {
+  position: relative;
+}
+.main-screen__title {
+  max-width: 391px;
+  color: #000000;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 19px;
+}
+.main-screen__subtitle {
+  max-width: 321px;
+  color: #000000;
+  font-family: Play;
+  font-size: 18px;
+  margin-bottom: 51px;
+}
+.main-screen__order {
+  margin-bottom: 110px;
+  display: inline-block;
+}
+.main-screen__content {
+  position: relative;
+}
+.main-screen__content:before {
+  content: "";
+  width: 486px;
+  height: 487px;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  background: url(../img/content/headphones.png) center center/cover no-repeat;
+  border-radius: 50%;
+}
+.main-screen .specs {
+  max-width: 497px;
+}
+.main-screen .specs__list {
+  display: flex;
+  justify-content: space-between;
+}
+.main-screen .specs__item {
+  display: flex;
+}
+.main-screen .specs__text {
+  color: #000000;
+  font-size: 16px;
+  width: 97px;
+  line-height: 1.2;
+}
+.main-screen .specs__icon {
+  margin-right: 8px;
 }

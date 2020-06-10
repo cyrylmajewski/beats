@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 21px;
+    margin-bottom: 83px;
+    .logo {
+        margin-right: 38px;
+    }
+    .menu {
+        &__list {
+            min-width: 638px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__item {
+            font-size: 16px;
+        }
+    }
+    .contact {
+        color: $black;
+        font-size: 21px;
+        text-transform: uppercase;
+        font-style: normal;
+        margin-left: auto;
+    
+        &__item {
+            display: flex;
+        }
+    
+        &__icon {
+            margin-right: 2px;
+        }
+    }
+}
