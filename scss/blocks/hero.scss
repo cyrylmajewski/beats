@@ -1,0 +1,57 @@
+.hero {
+    position: relative;
+    background-color: $light-grey;
+    padding: 23px 0 36px 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 42px;
+        width: 10px;
+        background-color: #999999;
+        bottom: -18px;
+        right: 28.2%;
+        transform: rotateZ(45deg);
+    }
+    height: 100vh;
+    min-height: 650px;
+    color: $black;
+
+    &__title-section {
+        width: 46%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+    
+    &__main-title {
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: bold;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        margin-bottom: 54px;
+        padding-right: 10%;
+    }
+
+    &__icons-section {
+        z-index: 2;
+    }
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: url(../../img/content/headphones.png) right center / 50% auto no-repeat;
+}

@@ -6,4 +6,9 @@
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    line-height: 1;
+
+    &:hover {
+        background-color: $darkRed;
+    }
 }

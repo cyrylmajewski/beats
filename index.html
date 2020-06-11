@@ -11,119 +11,67 @@
     <div class="wrapper">
         <div class="wrapper__content">
             <section class="hero">
-                <div class="container">
+                <div class="container hero__container">
                     <header class="header">
-                        <a href="#" class="logo">
-                            <img src="./img/content/logo.png" alt="logo" class="logo__item">
-                        </a>
+                        <img src="./img/icons/logo.svg" alt="logo" class="logo">
                         <nav class="menu">
                             <ul class="menu__list">
-                                <li class="menu__item"><a href="#">О нас</a></li>
-                                <li class="menu__item"><a href="#">Наушники</a></li>
-                                <li class="menu__item"><a href="#">Команда</a></li>
-                                <li class="menu__item"><a href="#">Цвета</a></li>
-                                <li class="menu__item"><a href="#">Отзывы</a></li>
-                                <li class="menu__item"><a href="#">Как мы работаем</a></li>
-                                <li class="menu__item"><a href="#">Контакты</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">О нас</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Наушники</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Команда</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Цвета</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Как мы работаем</a></li>
+                                <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
                             </ul>
                         </nav>
-                        <address class="contact">
-                            <a href="tel:88009039090" class="contact__item">
-                                <div class="contact__icon">
-                                    <img src="./img/icons/phone.png" alt="phone" class="contact__icon">
-                                </div>
-                                8 800 903 90 90</a>
-                        </address>
+                        <a href="tel:88009039090" class="phone">
+                            <span class="phone__icon"><img src="./img/icons/phone.png" alt="phone" class="phone__icon-item"></span>
+                            <span class="phone__text">8 800 903 90 90</span>
+                        </a>
                     </header>
-                    <section class="main-screen">
-                        <div class="main-screen__content">
-                            <h1 class="main-screen__title">
-                                Беспроводные 
-                                наушники 
-                                Beats Solo 3
-                            </h1>
-                            <div class="main-screen__subtitle">
-                                Встречайте новую версию наушников 
-                                из линейки Powerbeats.
-                            </div>
-                            <div class="main-screen__order">
-                                <a href="#" class="button">Заказать</a>
-                            </div>
-                            <div class="specs">
-                                <ul class="specs__list">
-                                    <li class="specs__item">
-                                        <div class="specs__icon"><img src="./img/icons/noise.png" alt="" class="specs__icon-item"></div>
-                                        <div class="specs__text">
-                                            <p>Безупречный звук</p>
-                                        </div>
-                                    </li>
-                                    <li class="specs__item">
-                                        <div class="specs__icon"><img src="./img/icons/battery.png" alt="" class="specs__icon-item"></div>
-                                        <div class="specs__text">
-                                        <p>До 40 часов работы</p>
-                                        </div>
-                                    </li>
-                                    <li class="specs__item">
-                                        <div class="specs__icon"><img src="./img/icons/plug.png" alt="" class="specs__icon-item"></div>
-                                        <div class="specs__text">
-                                        <p>Технология Fast Fuel</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="hero__title-section">
+                        <h1 class="hero__main-title">
+                            Беспроводные 
+                            наушники 
+                            Beats Solo 3
+                        </h1>
+                        <div class="hero__subtitle">Встречайте новую версию наушников 
+                            из линейки Powerbeats.
                         </div>
-                    </secction>
-                </div>
-            </section>
-            <section class="reasons">
-                <div class="container reasons--container">
-                    <div class="reasons__main">
-                        <h2 class="reasons__main-title">почему beats solo 3?</h2>
-                        <div class="reasons__main-subtitle">
-                            Процессор W1 работает невероятно эффективно и позволяет легко 
-                            подключать наушники к различным устройствам Apple.
-                        </div>
+                        <a href="#" class="button">Заказать</a>
                     </div>
-                    <div class="reasons__blocks">
-                        <ul class="reasons__list">
-                            <li class="reasons__item">
-                                <div class="reasons__pic">
-                                    <img src="./img/icons/battery-second.png" alt="" class="reasons__pic-item">
+                    <div class="hero__icons-section">
+                        <ul class="features">
+                            <li class="features__item feature">
+                                <div class="feature__icon">
+                                    <img src="./img/icons/noise.svg" alt="noise">
                                 </div>
-                                <h3 class="reasons__title">40 часов работы</h3>
-                                <div class="reasons__subtitle">
-                                    <p>Наушники Beats Solo3 могут работать 
-                                    до 40 часов без подзарядки, чтобы вы 
-                                    могли пользоваться ими каждый день.</p>
+                                <div class="feature__text">
+                                    Безупречный звук
                                 </div>
                             </li>
-                            <li class="reasons__item">
-                                <div class="reasons__pic">
-                                    <img src="./img/icons/sound.png" alt="" class="reasons__pic-item">
+                            <li class="features__item feature">
+                                <div class="feature__icon">
+                                    <img src="./img/icons/charging.svg" alt="battery">
                                 </div>
-                                <h3 class="reasons__title">Фирменное звучание</h3>
-                                <div class="reasons__subtitle">
-                                    <p>Фирменное звучание Beats в наушниках 
-                                    с технологией Bluetooth класса 
-                                    1 будет сопровождать вас повсюду — 
-                                    куда бы вы ни отправились.</p>
+                                <div class="feature__text">
+                                    До 40 часов работы
                                 </div>
                             </li>
-                            <li class="reasons__item">
-                                <div class="reasons__pic">
-                                    <img src="./img/icons/time.png" alt="" class="reasons__pic-item">
+                            <li class="features__item feature">
+                                <div class="feature__icon">
+                                    <img src="./img/icons/plug.svg" alt="plug">
                                 </div>
-                                <h3 class="reasons__title">Быстрая зарядка</h3>
-                                <div class="reasons__subtitle">
-                                   <p> Благодаря технологии Fast Fuel 
-                                    всего через 5 минут зарядки вы 
-                                    сможете слушать музыку ещё 3 часа.</p>
+                                <div class="feature__text">
+                                    Технология Fast Fuel  
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
+            <div class="long" style="height: 600px; background-color:blue;"></div>
         </div>
         <div class="footer-container">
 
