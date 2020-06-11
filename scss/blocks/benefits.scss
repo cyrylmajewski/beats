@@ -1,0 +1,39 @@
+.benefits {
+    display: flex;
+
+    &-section {
+        position: relative;
+        &:after {
+            content: url(../../img/content/red_triangle.png);
+            position: absolute;
+            bottom: -14px;
+            left: 7%;
+        }
+    }
+
+    &__item {
+        flex: 1;
+        padding: 0 3%;
+        position: relative;
+
+        &:before {
+            content: url(../../img/content/circles.png);
+            position: absolute;
+            top: 30px;
+            right: 0;
+            transform: translateX(50%);
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

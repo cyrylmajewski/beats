@@ -12,6 +12,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     height: 100%;
+    color: #666666;
 }
 
 *, ::before, ::after {
@@ -21,6 +22,7 @@ html, body {
 .container {
     width: $containerWidth;
     margin: 0 auto;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
