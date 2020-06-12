@@ -11,6 +11,9 @@ $light-grey: #f5f5f5;
 $baseFontSize: 18px;
 $containerWidth: 940px;
 
+//z-index
+$z-index-menu: 100;
+
 //setup
 @import "fonts";
 @import "base";

@@ -505,14 +505,18 @@ img {
 
 .fixed-menu {
   position: fixed;
-  top: 20%;
-  right: 3%;
+  top: 39%;
+  right: 6%;
+  z-index: 100;
 }
 .fixed-menu__item {
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 .fixed-menu__item--active .fixed-menu__link {
   border-color: #e42424;
+}
+.fixed-menu__item--active .fixed-menu__link:before {
+  background: #e42424;
 }
 .fixed-menu__link {
   width: 16px;
@@ -520,9 +524,17 @@ img {
   border-radius: 50%;
   border: 1px solid transparent;
   display: block;
+  position: relative;
 }
 .fixed-menu__link:before {
   content: "";
   display: block;
   width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #999999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
