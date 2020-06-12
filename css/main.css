@@ -153,7 +153,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: url(../../img/content/headphones.png) right 4% center/50% auto no-repeat;
+  background: url(../../../beats/img/content/headphones.png) right 4% center/50% auto no-repeat;
 }
 
 .header {
@@ -242,7 +242,7 @@ img {
   position: relative;
 }
 .benefits-section:after {
-  content: url(../../img/content/red_triangle.png);
+  content: url(../../../beats/img/content/red_triangle.png);
   position: absolute;
   bottom: -14px;
   left: 7%;
@@ -254,7 +254,7 @@ img {
   position: relative;
 }
 .benefits__item:before {
-  content: url(../../img/content/circles.png);
+  content: url(../../../beats/img/content/circles.png);
   position: absolute;
   top: 30px;
   right: 0;
@@ -394,11 +394,11 @@ img {
 }
 
 .order-section {
-  background: url(../../img/content/order_background.jpg) center center/cover no-repeat;
+  background: url(../../../beats/img/content/order_background.jpg) center center/cover no-repeat;
   position: relative;
 }
 .order-section:after {
-  content: url(../../img/content/polygon.png);
+  content: url(../../../beats/img/content/polygon.png);
   position: absolute;
   top: -29px;
   right: 10%;

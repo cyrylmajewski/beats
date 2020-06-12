@@ -4,7 +4,7 @@
     &-section {
         position: relative;
         &:after {
-            content: url(../../img/content/red_triangle.png);
+            content: url(../../../beats/img/content/red_triangle.png);
             position: absolute;
             bottom: -14px;
             left: 7%;
@@ -18,7 +18,7 @@
         position: relative;
 
         &:before {
-            content: url(../../img/content/circles.png);
+            content: url(../../../beats/img/content/circles.png);
             position: absolute;
             top: 30px;
             right: 0;
