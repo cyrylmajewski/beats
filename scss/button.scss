@@ -1,0 +1,29 @@
+.button {
+    padding: 17px 40px;
+    background: $red;
+    border-radius: 26px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-block;
+    border: none;
+
+    &:hover {
+        background-color: $darkRed;
+    }
+
+    &--theme--transparent {
+        background: transparent;
+        color: #999999;
+        font-size: 18px;
+        text-transform: none;
+        font-weight: 400;
+
+        &:hover {
+            color: #e01f3d;
+            background: transparent;
+        }
+    }
+}

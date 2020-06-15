@@ -1,0 +1,540 @@
+@font-face {
+  font-family: "Play";
+  src: url("../fonts/play-regular-webfont.woff2") format("woff2"), url("../fonts/play-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Play";
+  src: url("../fonts/play-bold-webfont.woff2") format("woff2"), url("../fonts/play-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  /*700*/
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Play", Helvetica, sans-serif;
+  background: #f5f5f5;
+  font-size: 16px;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  height: 100%;
+  color: #666666;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-width: 960px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper__content {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.button {
+  padding: 17px 40px;
+  background: #e01f3d;
+  border-radius: 26px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-block;
+  border: none;
+}
+.button:hover {
+  background-color: #ca1b36;
+}
+.button--theme--transparent {
+  background: transparent;
+  color: #999999;
+  font-size: 18px;
+  text-transform: none;
+  font-weight: 400;
+}
+.button--theme--transparent:hover {
+  color: #e01f3d;
+  background: transparent;
+}
+
+.hero {
+  position: relative;
+  background-color: #f5f5f5;
+  padding: 23px 0 36px 0;
+  height: 100vh;
+  min-height: 650px;
+  color: #000000;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 42px;
+  width: 10px;
+  background-color: #999999;
+  bottom: -18px;
+  right: 28.2%;
+  transform: rotateZ(45deg);
+  z-index: 1;
+}
+.hero__title-section {
+  width: 46%;
+  position: relative;
+  z-index: 2;
+}
+.hero .logo {
+  width: 42px;
+  height: 42px;
+}
+.hero__main-title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.hero__subtitle {
+  font-size: 18px;
+  margin-bottom: 54px;
+  padding-right: 10%;
+}
+.hero__icons-section {
+  z-index: 2;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: url(../../../beats/img/content/headphones.png) right 4% center/50% auto no-repeat;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .menu__list .menu__item {
+  margin-right: 28px;
+}
+.header .menu__list .menu__item:last-child {
+  margin-right: 0;
+}
+.header .phone {
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+}
+.header .phone__icon-item {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+.features {
+  display: flex;
+}
+.features__item {
+  margin-right: 38px;
+}
+.features__item:last-child {
+  margin-right: 0;
+}
+
+.feature {
+  display: flex;
+}
+.feature__icon {
+  width: 45px;
+  margin-right: 7px;
+}
+.feature__text {
+  max-width: 89px;
+}
+
+.section {
+  height: 100vh;
+  min-height: 650px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section__title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 25px;
+}
+.section--font--color--white {
+  color: #f8faf9;
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 57px;
+}
+
+.headline__subtitle {
+  font-size: 18px;
+  padding: 0 14%;
+  line-height: 1.3;
+}
+
+.benefits {
+  display: flex;
+}
+.benefits-section {
+  position: relative;
+}
+.benefits-section:after {
+  content: url(../../../beats/img/content/red_triangle.png);
+  position: absolute;
+  bottom: -14px;
+  left: 7%;
+  z-index: 1;
+}
+.benefits__item {
+  flex: 1;
+  padding: 0 3%;
+  position: relative;
+}
+.benefits__item:before {
+  content: url(../../../beats/img/content/circles.png);
+  position: absolute;
+  top: 30px;
+  right: 0;
+  transform: translateX(50%);
+}
+.benefits__item:first-child {
+  padding-left: 0;
+}
+.benefits__item:last-child {
+  padding-right: 0;
+}
+.benefits__item:last-child:before {
+  display: none;
+}
+
+.benefit {
+  text-align: center;
+}
+.benefit__image {
+  margin-bottom: 20px;
+}
+.benefit__image-wrapper {
+  display: inline-block;
+  width: 126px;
+  height: 126px;
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.benefit__icon {
+  width: 58px;
+  height: 62px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.benefit__title {
+  font-size: 24px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.reviews-section {
+  position: relative;
+}
+.reviews-section:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  bottom: -22px;
+  left: 8%;
+  border-radius: 50%;
+  background: #999999;
+}
+.reviews__display {
+  background: #f5f5f5;
+  padding: 51px 110px 34px 34px;
+  margin-bottom: 21px;
+  overflow: hidden;
+  position: relative;
+}
+.reviews__display-item {
+  display: flex;
+}
+.reviews__display:before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -65px;
+  z-index: 1;
+}
+.reviews__avatar {
+  width: 254px;
+  height: 260px;
+}
+.reviews__avatar-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.reviews__content {
+  flex: 1;
+  margin-left: 20px;
+}
+.reviews__title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #000000;
+}
+.reviews__text {
+  margin-bottom: 45px;
+}
+.reviews__author {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+.reviews__switcher {
+  display: flex;
+  justify-content: center;
+}
+
+.interactive-avatar {
+  width: 80px;
+  height: 80px;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.interactive-avatar--active {
+  border-color: #e01f3d;
+}
+.interactive-avatar__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+.interactive-avatar__img {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.order-section {
+  background: url(../../../beats/img/content/order_background.jpg) center center/cover no-repeat;
+  position: relative;
+}
+.order-section:after {
+  content: url(../../../beats/img/content/polygon.png);
+  position: absolute;
+  top: -29px;
+  right: 10%;
+  z-index: 1;
+}
+
+.order__title {
+  color: #ffffff;
+  margin-bottom: 36px;
+}
+
+.form {
+  display: flex;
+}
+.form__title {
+  font-size: 18px;
+}
+.form__col {
+  flex: 1;
+  margin-right: 20px;
+}
+.form__col:last-child {
+  margin-right: 0;
+}
+.form__row {
+  display: flex;
+  margin-bottom: 18px;
+}
+.form__row--textarea {
+  margin-bottom: 21px;
+}
+.form__block {
+  flex: 1;
+  margin-right: 20px;
+}
+.form__block:last-child {
+  margin-right: 0;
+}
+.form__input {
+  width: 100%;
+  border: none;
+  padding: 18px 11px;
+  border: solid 3px transparent;
+}
+.form__input--textarea {
+  height: 180px;
+  resize: none;
+}
+.form__input:focus {
+  border-color: #e01f3d;
+  outline: none;
+}
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form__buttons {
+  margin-top: 31px;
+}
+
+.radio {
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.radio:first-child {
+  margin-right: 35px;
+  margin-bottom: 12px;
+}
+.radio--checkbox .radio__visible {
+  border-radius: 0;
+}
+.radio--checkbox .radio__visible:before {
+  border-radius: 0;
+}
+.radio__item {
+  display: none;
+}
+.radio__item:checked ~ .radio__visible:before {
+  display: block;
+}
+.radio__visible {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 11px;
+}
+.radio__visible:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #e01f3d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.fixed-menu {
+  position: fixed;
+  top: 39%;
+  right: 6%;
+  z-index: 100;
+}
+.fixed-menu__item {
+  margin-bottom: 12px;
+}
+.fixed-menu__item--active .fixed-menu__link {
+  border-color: #e42424;
+}
+.fixed-menu__item--active .fixed-menu__link:before {
+  background: #e42424;
+}
+.fixed-menu__link {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: block;
+  position: relative;
+}
+.fixed-menu__link:before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #999999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

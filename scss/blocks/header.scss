@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .menu__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .menu__item {
+            margin-right: 28px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .phone {
+        font-size: 21px;
+        display: flex;
+        align-items: center;
+
+        &__icon-item {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+        }
+    }
+}
