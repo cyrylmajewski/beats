@@ -1,0 +1,12 @@
+.menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu__item {
+    margin-right: 28px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}

@@ -20,6 +20,9 @@ $z-index-menu: 100;
 
 //blocks
 @import "button";
+@import "blocks/menu";
+@import "blocks/phone";
+@import "blocks/logo";
 @import "blocks/hero";
 @import "blocks/header";
 @import "blocks/features";

@@ -6,16 +6,16 @@
     flex-direction: column;
     justify-content: center;
 
-    &__title {
-        font-size: 48px;
-        font-weight: bold;
-        text-align: center;
-        text-transform: uppercase;
-        color: $black;
-        margin-bottom: 25px;
-    }
-
     &--font--color--white {
         color: #f8faf9;
     }
+}
+
+.section__title {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: 25px;
 }
