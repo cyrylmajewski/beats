@@ -1,0 +1,23 @@
+.mobile-menu {
+    display: none;
+    @include tablets {
+        display: block;
+        padding: 2% 0 2% 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: $z-index-menu;
+    }
+}
+
+@keyframes menuOpacity {
+
+}
+
+
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

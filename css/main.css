@@ -91,6 +91,27 @@ img {
   max-width: 100%;
 }
 
+.mobile-menu {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+    padding: 2% 0 2% 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+@keyframes menuOpacity {}
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .hamburger {
   width: 24px;
   height: 22px;
@@ -180,7 +201,7 @@ img {
   margin-right: 0.25rem;
 }
 
-.logo__item {
+.logo {
   width: 42px;
   height: 42px;
 }
@@ -262,7 +283,7 @@ img {
 }
 @media screen and (max-width: 768px) {
   .hero__container {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -325,6 +346,7 @@ img {
 @media screen and (max-width: 768px) {
   .header {
     margin-bottom: 15%;
+    display: none;
   }
 }
 
