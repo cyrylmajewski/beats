@@ -12,7 +12,9 @@ $baseFontSize: 18px;
 $containerWidth: 940px;
 
 //breakpoints
-$tablets: 768px;
+$veryLarge: 1199.98px;
+$large: 991.8px;
+$tablets: 767.98px;
 $phones: 480px;
 
 //z-index
@@ -42,3 +44,5 @@ $z-index-menu: 100;
 @import "blocks/form";
 @import "blocks/radio";
 @import "blocks/fixed-menu";
+@import "blocks/contact";
+@import "blocks/footer";

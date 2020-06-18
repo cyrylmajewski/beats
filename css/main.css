@@ -15,12 +15,12 @@ html {
   box-sizing: border-box;
   font-size: 16px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1199.98px) {
   html {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 991.8px) {
   html {
     font-size: 14px;
   }
@@ -42,7 +42,7 @@ html, body {
 }
 
 .container {
-  width: 98%;
+  width: 95%;
   margin: 0 auto;
   position: relative;
   max-width: 940px;
@@ -118,6 +118,12 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 991.8px) {
+  .menu__list {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
 
 .menu__item {
   margin-right: 1.75rem;
@@ -138,7 +144,7 @@ img {
   margin-right: 0.25rem;
 }
 
-.logo {
+.logo__item {
   width: 42px;
   height: 42px;
 }
@@ -221,11 +227,12 @@ img {
   z-index: 2;
 }
 
-.hero__title-img {
+.hero__img {
   position: absolute;
   bottom: 50%;
   transform: translateY(58%);
   right: 0;
+  width: 54%;
 }
 
 .header {
@@ -614,4 +621,12 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.contact {
+  font-style: normal;
+}
+
+.footer {
+  display: flex;
 }

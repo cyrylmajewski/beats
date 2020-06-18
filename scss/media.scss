@@ -2,6 +2,18 @@
     @return $px / 16px + 0rem;
 }
 
+@mixin veryLarge {
+    @media screen and (max-width: $veryLarge) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (max-width: $large) {
+        @content;
+    }
+}
+
 @mixin tablets {
     @media screen and (max-width: $tablets) {
         @content;
