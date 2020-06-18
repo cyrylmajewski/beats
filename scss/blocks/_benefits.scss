@@ -17,14 +17,14 @@
 
 .benefits__item {
     flex: 1;
-    margin-left: 20px;
+    margin-left: rem(20px);
     position: relative;
     flex-basis: calc(100% / 3 - 20px);
 
     &:before {
         content: url(../../../beats/img/content/circles.png);
         position: absolute;
-        top: 30px;
+        top: rem(30px);
         right: 0;
         transform: translateX(50%);
     }

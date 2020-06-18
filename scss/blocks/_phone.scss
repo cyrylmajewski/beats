@@ -1,5 +1,5 @@
 .phone {
-    font-size: 21px;
+    font-size: rem(21px);
     display: flex;
     align-items: center;
 }
@@ -7,5 +7,5 @@
 .phone__icon-item {
     width: 12px;
     height: 12px;
-    margin-right: 4px;
+    margin-right: rem(4px);
 }

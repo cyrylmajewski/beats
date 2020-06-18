@@ -16,8 +16,8 @@
 
 .reviews__display {
     background: $light-grey;
-    padding: 51px 110px 34px 34px;
-    margin-bottom: 21px;
+    padding: rem(51px) rem(110px) rem(34px) rem(34px);
+    margin-bottom: rem(21px);
     overflow: hidden;
     position: relative;
 
@@ -30,7 +30,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: -65px;
+        top: rem(-65px);
         z-index: 1;
     }
 }
@@ -52,22 +52,22 @@
 
 .reviews__content {
     flex: 1;
-    margin-left: 20px;
+    margin-left: rem(20px);
 }
 
 .reviews__title {
-    font-size: 30px;
+    font-size: rem(30px);
     font-weight: bold;
-    margin-bottom: 24px;
+    margin-bottom: rem(24px);
     color: $black;
 }
 
 .reviews__text {
-    margin-bottom: 45px;
+    margin-bottom: rem(45px);
 }
 
 .reviews__author {
-    font-size: $baseFontSize;
+    font-size: rem($baseFontSize);
     font-weight: bold;
     color: $black;
 }

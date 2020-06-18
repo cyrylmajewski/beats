@@ -1,12 +1,12 @@
 .fixed-menu {
     position: fixed;
     top: 39%;
-    right: 6%;
+    right: 3%;
     z-index: $z-index-menu;
 }
 
 .fixed-menu__item {
-    margin-bottom: 12px;
+    margin-bottom: rem(12px);
 
     &:hover {
         .fixed-menu__link {

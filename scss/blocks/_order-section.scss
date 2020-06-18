@@ -4,7 +4,7 @@
     &:after {
         content: url(../../../beats/img/content/polygon.png);
         position: absolute;
-        top: -29px;
+        top: rem(-29px);
         right: 10%;
         z-index: 1;
     }
@@ -12,5 +12,5 @@
 
 .order__title {
     color: $white;
-    margin-bottom: 36px;
+    margin-bottom: rem(36px);
 }

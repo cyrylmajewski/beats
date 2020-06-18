@@ -3,7 +3,7 @@
 }
 
 .benefit__image {
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
 }
 
 .benefit__image-wrapper {
@@ -26,7 +26,7 @@
 }
 
 .benefit__title {
-    font-size: 24px;
+    font-size: rem(24px);
     color: $black;
     font-weight: bold;
 }

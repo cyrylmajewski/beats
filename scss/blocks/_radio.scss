@@ -4,8 +4,8 @@
     user-select: none;
 
     &:first-child {
-        margin-right: 35px;
-        margin-bottom: 12px;
+        margin-right: rem(35px);
+        margin-bottom: rem(12px);
     }
 
     &--checkbox {
@@ -44,7 +44,7 @@
     position: relative;
     border-radius: 50%;
     background: #fff;
-    margin-right: 11px;
+    margin-right: rem(11px);
 
     &:before {
         content: '';
