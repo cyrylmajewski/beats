@@ -91,6 +91,27 @@ img {
   max-width: 100%;
 }
 
+.hamburger {
+  width: 24px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  right: 0;
+}
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+.hamburger__plank {
+  width: 24px;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
 .button {
   padding: 17px 40px;
   background: #e01f3d;
