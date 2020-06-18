@@ -1,5 +1,8 @@
 .form {
     display: flex;
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .form__title {

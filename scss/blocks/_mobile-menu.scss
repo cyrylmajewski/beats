@@ -10,11 +10,11 @@
     }
 }
 
-@keyframes menuOpacity {
-
+.scroll {
+    background: $light-grey;
+    opacity: 0.95;
+    transition: background-color .4s;
 }
-
-
 
 .mobile-header {
     display: flex;

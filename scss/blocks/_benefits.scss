@@ -1,7 +1,17 @@
 .benefits {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -20px;
+    margin-left: rem(-20px);
+    @include tablets {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+}
+
+.benefits__container {
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .benefits-section {
@@ -19,7 +29,14 @@
     flex: 1;
     margin-left: rem(20px);
     position: relative;
-    flex-basis: calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - rem(20px));
+
+    @include tablets {
+        margin-left: 0;
+        flex-basis: calc(100% / 3);
+        max-width: 256px;
+        
+    }
 
     &:before {
         content: url(../../../beats/img/content/circles.png);

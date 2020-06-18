@@ -4,6 +4,13 @@
 
 .benefit__image {
     margin-bottom: rem(20px);
+    @include tablets {
+        margin-bottom: rem(10px);
+    }
+}
+
+.benefit__text {
+    line-height: 1.32;
 }
 
 .benefit__image-wrapper {

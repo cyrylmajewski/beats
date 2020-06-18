@@ -21,6 +21,11 @@
     overflow: hidden;
     position: relative;
 
+    @include tablets {
+        padding: rem(53px) rem(20px) rem(25px) rem(20px);
+        margin-bottom: rem(27px);
+    }
+
     &:before {
         content: "";
         width: 90px;
@@ -37,11 +42,21 @@
 
 .reviews__display-item {
     display: flex;
+    @include tablets {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .reviews__avatar {
     width: 254px;
     height: 260px;
+    @include tablets {
+        width: 131px;
+        height: 133px;
+        margin-bottom: rem(26px);
+    }
 }
 
 .reviews__avatar-img {
@@ -60,16 +75,30 @@
     font-weight: bold;
     margin-bottom: rem(24px);
     color: $black;
+    @include tablets {
+        font-size: rem(27px);
+        margin-bottom: rem(14px);
+        text-align: center;
+    }
 }
 
 .reviews__text {
     margin-bottom: rem(45px);
+    @include tablets {
+        margin-bottom: rem(10px);
+        text-align: center;
+        font-size: rem(18px);
+        line-height: 1.3;
+    }
 }
 
 .reviews__author {
     font-size: rem($baseFontSize);
     font-weight: bold;
     color: $black;
+    @include tablets {
+        text-align: center;
+    }
 }
 
 .reviews__switcher {
