@@ -8,6 +8,9 @@ html {
     @include large {
         font-size: 14px;
     }
+    @include tablets {
+        font-size: 16px;
+    }
 }
 
 html, body {
@@ -26,7 +29,7 @@ html, body {
 }
 
 .container {
-    width: 95%;
+    width: 94%;
     margin: 0 auto;
     position: relative;
     max-width: $containerWidth;

@@ -2,6 +2,9 @@
     font-size: rem(21px);
     display: flex;
     align-items: center;
+    @include tablets {
+        display: none;
+    }
 }
 
 .phone__icon-item {
