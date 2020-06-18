@@ -8,6 +8,12 @@
 .fixed-menu__item {
     margin-bottom: 12px;
 
+    &:hover {
+        .fixed-menu__link {
+            border-color: #e42424;
+        }
+    }
+
     &--active {
         
         .fixed-menu__link {

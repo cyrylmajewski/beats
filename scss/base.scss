@@ -20,9 +20,10 @@ html, body {
 }
 
 .container {
-    width: $containerWidth;
+    width: auto;
     margin: 0 auto;
     position: relative;
+    max-width: $containerWidth;
 }
 
 h1, h2, h3, h4, h5, h6 {
