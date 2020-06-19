@@ -34,8 +34,8 @@
     @include tablets {
         margin-left: 0;
         flex-basis: calc(100% / 3);
-        max-width: 256px;
-        
+        max-width: 234px;
+        min-width: 233px;
     }
 
     &:before {
