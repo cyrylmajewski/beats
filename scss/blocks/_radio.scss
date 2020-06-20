@@ -6,6 +6,15 @@
     &:first-child {
         margin-right: rem(35px);
         margin-bottom: rem(12px);
+
+        @include tablets {
+            margin-bottom: 0;
+        }
+
+        @include phones {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
     }
 
     &--checkbox {

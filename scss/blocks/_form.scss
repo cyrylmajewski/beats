@@ -4,6 +4,10 @@
         flex-direction: column;
         padding: 0 19%;
     }
+
+    @include phones {
+        padding: 0;
+    }
 }
 
 .form__title {
@@ -69,13 +73,26 @@
 .form__controls {
     display: flex;
     flex-wrap: wrap;
+
+    @include tablets {
+        margin-bottom: 10px;
+    }
+
+    @include phones {
+        justify-content: space-evenly;
+        margin-bottom: rem(10px);
+    }
 }
 
 .form__buttons {
     margin-top: rem(31px);
     @include tablets {
-        margin-top: 0;
+        margin-top: rem(39px);
         display: flex;
         justify-content: center;
+    }
+
+    @include phones {
+        margin-top: rem(43px);
     }
 }
