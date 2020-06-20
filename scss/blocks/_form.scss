@@ -2,6 +2,7 @@
     display: flex;
     @include tablets {
         flex-direction: column;
+        padding: 0 19%;
     }
 }
 
@@ -14,6 +15,10 @@
     margin-right: rem(20px);
 
     &:last-child {
+        margin-right: 0;
+    }
+
+    @include tablets {
         margin-right: 0;
     }
 }
@@ -42,9 +47,17 @@
     padding: rem(18px) rem(11px);
     border: solid 3px transparent;
 
+    @include tablets {
+        padding: rem(3px) rem(11px);
+    }
+
     &--textarea {
         height: 180px;
         resize: none;
+
+        @include tablets {
+            height: 76px;
+        }
     }
 
     &:focus {
@@ -60,4 +73,9 @@
 
 .form__buttons {
     margin-top: rem(31px);
+    @include tablets {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+    }
 }

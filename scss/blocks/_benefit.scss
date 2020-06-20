@@ -1,5 +1,10 @@
 .benefit {
     text-align: center;
+
+    @include phones {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .benefit__image {
@@ -7,10 +12,21 @@
     @include tablets {
         margin-bottom: rem(10px);
     }
+
+    @include phones {
+        margin-left: rem(10px);
+    }
 }
 
 .benefit__text {
     line-height: 1.32;
+
+    @include phones {
+        text-align: left;
+        max-width: 304px;
+        margin-left: rem(13px);
+        align-self: flex-start;
+    }
 }
 
 .benefit__image-wrapper {

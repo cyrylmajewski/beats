@@ -9,6 +9,11 @@
     &--active {
         border-color: #e01f3d;
     }
+
+    @include phones {
+        width: 54px;
+        height: 54px;
+    }
 }
 
 .interactive-avatar__link {

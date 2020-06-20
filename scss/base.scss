@@ -9,7 +9,7 @@ html {
         font-size: 14px;
     }
     @include tablets {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
@@ -33,6 +33,15 @@ html, body {
     margin: 0 auto;
     position: relative;
     max-width: $containerWidth;
+
+    @include tablets {
+        max-width: $tablets;
+    }
+
+    @include phones {
+        width: 96%;
+        max-width: $phones;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

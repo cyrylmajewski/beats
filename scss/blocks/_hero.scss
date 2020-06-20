@@ -53,6 +53,11 @@
     @include tablets {
         justify-content: center;
     }
+
+    @include phones {
+        justify-content: flex-start;
+        padding-top: 14%;
+    }
 }
 
 .hero__main-title {
@@ -65,6 +70,10 @@
         margin-bottom: rem(6px);
         max-width: 619px;
         text-align: center;
+    }
+
+    @include phones {
+        max-width: 294px;
     }
 }
 
@@ -99,5 +108,9 @@
         width: 51%;
         margin-bottom: 22px;
         transform: none;
+    }
+
+    @include phones {
+        width: 69%;
     }
 }

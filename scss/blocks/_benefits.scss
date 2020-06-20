@@ -6,6 +6,10 @@
         margin-left: 0;
         justify-content: space-around;
     }
+
+    @include phones {
+        flex-direction: column;
+    }
 }
 
 .benefits__container {
@@ -34,16 +38,29 @@
     @include tablets {
         margin-left: 0;
         flex-basis: calc(100% / 3);
-        max-width: 234px;
-        min-width: 233px;
+        max-width: 250px;
+        min-width: 249px;
+    }
+
+    @include phones {
+        max-width: none;
+        min-width: none;
+        margin-bottom: rem(26px);
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     &:before {
-        content: url(../../../beats/img/content/circles.png);
+        content: url(../../img/content/circles.png);
         position: absolute;
         top: rem(30px);
         right: 0;
         transform: translateX(50%);
+
+        @include tablets {
+            display: none;
+        }
     }
 
     &:first-child {

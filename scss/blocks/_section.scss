@@ -19,4 +19,8 @@
     text-transform: uppercase;
     color: $black;
     margin-bottom: rem(25px);
+
+    @include phones {
+        font-size: rem(36px);
+    }
 }

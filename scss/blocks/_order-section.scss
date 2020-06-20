@@ -13,4 +13,7 @@
 .order__title {
     color: $white;
     margin-bottom: rem(36px);
+    @include tablets {
+        margin-bottom: rem(26px);
+    }
 }
