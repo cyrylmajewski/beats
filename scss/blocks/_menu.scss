@@ -1,0 +1,21 @@
+.menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include large {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.menu__item {
+    margin-right: rem(28px);
+    &:last-of-type {
+        margin-right: 0;
+    }
+}

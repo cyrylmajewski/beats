@@ -1,12 +1,32 @@
 
 html {
     box-sizing: border-box;
+    font-size: 16px;
+    @include veryLarge {
+        font-size: 15px;
+    }
+    @include large {
+        font-size: 14px;
+    }
+    @include tablets {
+        font-size: 16px;
+    }
+
+    @include phones {
+        font-size: 15px;
+    }
+
+    @include smallPhones {
+        font-size: 14px;
+    }
+    @include verySmallPhones {
+        font-size: 13px;
+    }
 }
 
 html, body {
     font-family: 'Play', Helvetica, sans-serif;
     background: #f5f5f5;
-    font-size: 16px;
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -20,9 +40,20 @@ html, body {
 }
 
 .container {
-    width: $containerWidth;
+    width: 94%;
     margin: 0 auto;
     position: relative;
+    max-width: $containerWidth;
+
+    @include tablets {
+        max-width: $tablets;
+    }
+
+    @include phones {
+        width: 96%;
+        max-width: $phones;
+    }
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,7 +81,6 @@ ul {
 .wrapper {
     overflow: hidden;
     width: 100%;
-    min-width: $containerWidth + 20px;
     min-height: 100%;
     display: flex;
     flex-direction: column;

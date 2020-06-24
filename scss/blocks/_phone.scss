@@ -1,0 +1,23 @@
+.phone {
+    font-size: rem(21px);
+    display: flex;
+    align-items: center;
+    @include tablets {
+        display: none;
+    }
+    &--mobile {
+        @include tablets {
+            display: flex;
+        }
+
+        @include phones {
+            font-size: rem(18px);
+        }
+    }
+}
+
+.phone__icon-item {
+    width: 12px;
+    height: 12px;
+    margin-right: rem(4px);
+}

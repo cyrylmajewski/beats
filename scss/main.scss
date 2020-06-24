@@ -11,20 +11,33 @@ $light-grey: #f5f5f5;
 $baseFontSize: 18px;
 $containerWidth: 940px;
 
+//breakpoints
+$veryLarge: 1199.98px;
+$large: 991.8px;
+$tablets: 768px;
+$phones: 480px;
+$smallPhones: 375px;
+$verySmallPhones: 320px;
+
 //z-index
 $z-index-menu: 100;
+@import "media";
 
 //setup
 @import "fonts";
 @import "base";
 
 //blocks
+@import "blocks/hamburger";
 @import "button";
+@import "blocks/menu";
+@import "blocks/phone";
+@import "blocks/logo";
+@import "blocks/section";
 @import "blocks/hero";
 @import "blocks/header";
 @import "blocks/features";
 @import "blocks/feature";
-@import "blocks/section";
 @import "blocks/headline";
 @import "blocks/benefits";
 @import "blocks/benefit";
@@ -33,4 +46,8 @@ $z-index-menu: 100;
 @import "blocks/order-section";
 @import "blocks/form";
 @import "blocks/radio";
+@import "blocks/map";
+@import "blocks/socials";
 @import "blocks/fixed-menu";
+@import "blocks/contact";
+@import "blocks/footer";

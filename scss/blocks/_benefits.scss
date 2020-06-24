@@ -1,0 +1,87 @@
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: rem(-20px);
+    @include tablets {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    @include phones {
+        flex-direction: column;
+    }
+}
+
+.benefits__container {
+    @include tablets {
+        width: 100%;
+    }
+}
+
+.benefits-section {
+    position: relative;
+    &:after {
+        content: url(../../../beats/img/content/red_triangle.png);
+        position: absolute;
+        bottom: rem(-14px);
+        left: 7%;
+        z-index: 1;
+    }
+}
+
+.benefits__item {
+    flex: 1;
+    margin-left: rem(20px);
+    position: relative;
+    flex-basis: calc(100% / 3 - rem(20px));
+
+    @include tablets {
+        margin-left: 0;
+        flex-basis: calc(100% / 3);
+        max-width: 250px;
+        min-width: 249px;
+    }
+
+    @include phones {
+        max-width: none;
+        min-width: none;
+        margin-bottom: rem(26px);
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    @include smallPhones {
+        margin-bottom: 0;
+    }
+
+    &:before {
+        content: url(../../img/content/circles.png);
+        position: absolute;
+        top: rem(30px);
+        right: 0;
+        transform: translateX(50%);
+
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.benefits__desc {
+    max-width: 304px;
+    width: 100%;
+    margin: 0 auto;
+}

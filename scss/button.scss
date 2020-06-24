@@ -1,9 +1,9 @@
 .button {
-    padding: 17px 40px;
+    padding: rem(17px) rem(40px);
     background: $red;
     border-radius: 26px;
     color: $white;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
@@ -17,7 +17,7 @@
     &--theme--transparent {
         background: transparent;
         color: #999999;
-        font-size: 18px;
+        font-size: rem(18px);
         text-transform: none;
         font-weight: 400;
 

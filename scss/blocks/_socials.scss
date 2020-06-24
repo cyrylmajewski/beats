@@ -1,0 +1,26 @@
+.socials {
+    align-self: center;
+}
+
+.socials__list {
+    display: flex;
+}
+
+.socials__item {
+    margin-right: rem(11px);
+}
+
+.socials__icon {
+    width: rem(36px);
+    height: rem(36px);
+    fill: #b2b2b2;
+    transition: fill .4s;
+}
+
+.socials__icon:hover {
+    fill: #000000;
+}
+
+.socials__item:last-of-type {
+    margin-right: 0;
+}
