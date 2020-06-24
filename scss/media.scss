@@ -25,3 +25,15 @@
         @content;
     }
 }
+
+@mixin smallPhones {
+    @media screen and (max-width: $smallPhones) {
+        @content;
+    }
+}
+
+@mixin verySmallPhones {
+    @media screen and (max-width: $verySmallPhones) {
+        @content;
+    }
+}

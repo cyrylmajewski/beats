@@ -16,6 +16,8 @@ $veryLarge: 1199.98px;
 $large: 991.8px;
 $tablets: 768px;
 $phones: 480px;
+$smallPhones: 375px;
+$verySmallPhones: 320px;
 
 //z-index
 $z-index-menu: 100;
@@ -26,7 +28,6 @@ $z-index-menu: 100;
 @import "base";
 
 //blocks
-@import "blocks/mobile-menu";
 @import "blocks/hamburger";
 @import "button";
 @import "blocks/menu";

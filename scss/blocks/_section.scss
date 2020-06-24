@@ -6,9 +6,14 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    position: relative;
 
     &--font--color--white {
         color: #f8faf9;
+    }
+    
+    @include phones {
+        min-height: initial;
     }
 }
 
@@ -23,4 +28,8 @@
     @include phones {
         font-size: rem(36px);
     }
+
+    @include verySmallPhones {
+        font-size: rem(32px);
+    } 
 }

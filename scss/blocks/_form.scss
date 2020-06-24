@@ -75,12 +75,11 @@
     flex-wrap: wrap;
 
     @include tablets {
-        margin-bottom: 10px;
+        margin-bottom: rem(10px);
     }
 
     @include phones {
         justify-content: space-evenly;
-        margin-bottom: rem(10px);
     }
 }
 

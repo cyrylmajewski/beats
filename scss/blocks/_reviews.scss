@@ -7,7 +7,7 @@
         position: absolute;
         width: 34px;
         height: 34px;
-        bottom: -22px;
+        bottom: rem(-22px);
         left: 8%;
         border-radius: 50%;
         background: #999999;
@@ -27,7 +27,7 @@
     }
 
     @include phones {
-        padding: 60px 39px;
+        padding: rem(60px) rem(39px);
     }
 
     &:before {

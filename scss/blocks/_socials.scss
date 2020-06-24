@@ -7,12 +7,12 @@
 }
 
 .socials__item {
-    margin-right: 11px;
+    margin-right: rem(11px);
 }
 
 .socials__icon {
-    width: 36px;
-    height: 36px;
+    width: rem(36px);
+    height: rem(36px);
     fill: #b2b2b2;
     transition: fill .4s;
 }

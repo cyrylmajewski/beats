@@ -5,6 +5,15 @@
     @include tablets {
         display: none;
     }
+    &--mobile {
+        @include tablets {
+            display: flex;
+        }
+
+        @include phones {
+            font-size: rem(18px);
+        }
+    }
 }
 
 .phone__icon-item {

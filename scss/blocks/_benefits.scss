@@ -23,7 +23,7 @@
     &:after {
         content: url(../../../beats/img/content/red_triangle.png);
         position: absolute;
-        bottom: -14px;
+        bottom: rem(-14px);
         left: 7%;
         z-index: 1;
     }
@@ -49,6 +49,10 @@
         &:last-of-type {
             margin-bottom: 0;
         }
+    }
+
+    @include smallPhones {
+        margin-bottom: 0;
     }
 
     &:before {
