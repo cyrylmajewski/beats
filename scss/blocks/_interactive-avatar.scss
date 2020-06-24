@@ -1,14 +1,7 @@
 .interactive-avatar {
     width: 80px;
     height: 80px;
-    border: 6px solid transparent;
-    border-radius: 50%;
-    overflow: hidden;
     position: relative;
-
-    &--active {
-        border-color: #e01f3d;
-    }
 
     @include phones {
         width: 54px;
@@ -20,8 +13,20 @@
     display: block;
     width: 100%;
     height: 100%;
+    border: 6px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &:focus, &:hover {
+        border-color: #e01f3d;
+        outline: navajowhite;
+    }
 }
 
+.interactive-avatar--active .interactive-avatar__link {
+    border-color: #e01f3d;
+    outline: navajowhite;
+}
 .interactive-avatar__img {
     display: block;
     width: 100%;
