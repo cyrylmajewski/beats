@@ -463,7 +463,6 @@ img {
   display: flex;
   cursor: pointer;
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .radio:first-child {
