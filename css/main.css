@@ -959,6 +959,40 @@ img {
   display: none;
 }
 
+.map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.socials {
+  align-self: center;
+}
+
+.socials__list {
+  display: flex;
+}
+
+.socials__item {
+  margin-right: 11px;
+}
+
+.socials__icon {
+  width: 36px;
+  height: 36px;
+  fill: #b2b2b2;
+  transition: fill 0.4s;
+}
+
+.socials__icon:hover {
+  fill: #000000;
+}
+
+.socials__item:last-of-type {
+  margin-right: 0;
+}
+
 .fixed-menu {
   position: fixed;
   top: 39%;
@@ -1002,8 +1036,18 @@ img {
 
 .contact {
   font-style: normal;
+  color: #000000;
+}
+
+.contact__location {
+  font-size: 18px;
+}
+
+.footer-container {
+  padding: 1% 0;
 }
 
 .footer {
   display: flex;
+  justify-content: space-between;
 }
