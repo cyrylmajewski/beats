@@ -6,6 +6,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: rem(20px);
     }
 }
 
@@ -14,5 +15,6 @@
 
     @include phones {
         font-size: rem(20px);
+        margin-bottom: rem(20px);
     }
 }
