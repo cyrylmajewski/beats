@@ -30,6 +30,11 @@
         padding: rem(60px) rem(39px);
     }
 
+    @include smallPhones {
+        padding: rem(53px) rem(20px) rem(25px) rem(20px);
+    }
+    
+
     &:before {
         content: "";
         width: 90px;
