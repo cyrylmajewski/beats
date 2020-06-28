@@ -21,20 +21,27 @@
     }
 }
 
+@keyframes modalAnimate {
+    0% { 
+
+    }
+}
+
 .menu__mobile {
     position: fixed;
+    opacity: 0;
+    transition: opacity .4s;
     background: rgba(47, 50, 52, 0.99);
     width: 100%;
     height: 100%;
     z-index: $z-index-menu;
     left: 0;
-    right: 0;
     bottom: 0;
     top: 0;
-    display: none;
+    // display: none;
 
     .close {
-        position: fixed;
+        position: absolute;
         right: 26px;
         top: 32px;
     }
@@ -47,7 +54,7 @@
     .menu__list {
         display: flex;
         margin-top: 20%;
-        position: fixed;
+        position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
@@ -65,4 +72,14 @@
     .menu__item a {
         color: #fff;
     }
+}
+
+.open {
+    opacity: 1;
+    transition: opacity .4s;
+    right: 0;
+}
+
+.hidden {
+    left: -9999px;
 }
