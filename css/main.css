@@ -11,6 +11,12 @@
   /*700*/
   font-style: normal;
 }
+@media screen and (max-width: 768px) {
+  head {
+    width: 768px;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -182,6 +188,10 @@ img {
   }
 }
 
+.menu .close__item {
+  display: none;
+}
+
 .menu__item {
   margin-right: 1.75rem;
 }
@@ -189,7 +199,6 @@ img {
   margin-right: 0;
 }
 
-@keyframes modalAnimate {}
 .menu__mobile {
   position: fixed;
   opacity: 0;
@@ -238,7 +247,12 @@ img {
 }
 
 .hidden {
-  left: -9999px;
+  left: 0px;
+}
+@media screen and (max-width: 768px) {
+  .hidden {
+    left: -9999px;
+  }
 }
 
 .phone {

@@ -27,3 +27,16 @@ cross.addEventListener("click", e => {
         toggleClass(menu, "hidden");
     }, 1000);
 });
+
+jQuery(document).ready(function(){
+    function classFunction(){
+      if(jQuery('body').width()<769){ jQuery('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
+      }
+      else{
+        jQuery('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
+      }
+    }
+    
+    classFunction();
+    jQuery(window).resize(classFunction);
+   })

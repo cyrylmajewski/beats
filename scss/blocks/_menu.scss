@@ -13,17 +13,17 @@
     }
 }
 
+.menu {
+    .close__item {
+        display: none;
+    }
+}
+
 
 .menu__item {
     margin-right: rem(28px);
     &:last-of-type {
         margin-right: 0;
-    }
-}
-
-@keyframes modalAnimate {
-    0% { 
-
     }
 }
 
@@ -81,5 +81,9 @@
 }
 
 .hidden {
-    left: -9999px;
+    left: 0px;
+
+    @include tablets {
+        left: -9999px;
+    }
 }
