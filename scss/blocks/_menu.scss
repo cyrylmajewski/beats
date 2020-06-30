@@ -13,9 +13,77 @@
     }
 }
 
+.menu {
+    .close__item {
+        display: none;
+    }
+}
+
+
 .menu__item {
     margin-right: rem(28px);
     &:last-of-type {
         margin-right: 0;
+    }
+}
+
+.menu__mobile {
+    position: fixed;
+    opacity: 0;
+    transition: opacity .4s;
+    background: rgba(47, 50, 52, 0.99);
+    width: 100%;
+    height: 100%;
+    z-index: $z-index-menu;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    // display: none;
+
+    .close {
+        position: absolute;
+        right: 26px;
+        top: 32px;
+    }
+    
+    .close__item {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu__list {
+        display: flex;
+        margin-top: 20%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        color: black;
+        font-size: rem(36px);
+        height: 50%;
+    }
+
+    .menu__item {
+        margin-right: 0;
+    }
+
+    .menu__item a {
+        color: #fff;
+    }
+}
+
+.open {
+    opacity: 1;
+    transition: opacity .4s;
+    right: 0;
+}
+
+.hidden {
+    left: 0px;
+
+    @include tablets {
+        left: -9999px;
     }
 }

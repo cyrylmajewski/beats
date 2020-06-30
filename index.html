@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <section class="section hero">
+        <section class="section hero" id="about">
             <div class="container hero__container">
                 <header class="header">
                     <a href="#" class="logo">
@@ -22,18 +22,23 @@
                             <use xlink:href="./img/icons/sprite.svg#logo"></use>
                         </svg>
                     </a>
-                    <nav class="menu">
+                    <nav class="menu menu__mobile hidden">
+                        <a href="#" class="close">
+                            <svg class="close__item">
+                                <use xlink:href="./img/icons/sprite.svg#cross"></use>
+                            </svg>
+                        </a>
                         <ul class="menu__list">
-                            <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
+                            <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Наушники</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Команда</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Цвета</a></li>
-                            <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+                            <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Как мы работаем</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
                         </ul>
                     </nav>
-                    <a href="#" class="hamburger">
+                    <a href="#" class="hamburger" id="hamburger">
                         <span class="hamburger__plank"></span>
                         <span class="hamburger__plank"></span>
                         <span class="hamburger__plank"></span>
@@ -91,7 +96,7 @@
                 </div>
             </div>
         </section>
-        <section class="section benefits-section">
+        <section class="section benefits-section" id="benefits">
             <div class="container benefits__container">
                 <div class="headline">
                     <h2 class="section__title headline__title">почему beats solo 3?</h2>
@@ -158,7 +163,64 @@
                 </ul>
             </div>
         </section>
-        <section class="section reviews-section">
+        <section class="section product-section" id="product">
+            <div class="container product__container">
+                <div class="arrow arrow--left">
+                    <a href="#" class="arrow__link" id="left">
+                        <svg class="arrow__link-item arrow__link-item--left">
+                            <use xlink:href="./img/icons/sprite.svg#arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="product">
+                    <div class="product__img">
+                        <img src="./img/content/product_1.png" alt="product" class="product__img-item">
+                    </div>
+                    <div class="product__content">
+                        <div class="specs">
+                            <div class="specs__block">
+                                <svg class="specs__block-item">
+                                    <use xlink:href="./img/icons/sprite.svg#gear"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <h2 class="product__title section__title">
+                            beats solo 3. цвет 
+                            «атласное серебро»
+                        </h2>
+                        <div class="product__subtitle">
+                           <p>
+                                Беспроводные наушники Beats Solo3 готовы к работе в любой момент. Включите их и поднесите к своему iPhone — они мгновенно подключатся к нему.
+                            </p>
+                        </div>
+                        <div class="param">
+                            <ul class="param__list">
+                                <li class="param__item">
+                                    <div class="param__title">Зарядка</div>
+                                    <div class="param__desc">2 часа</div>
+                                </li>
+                                <li class="param__item">
+                                    <div class="param__title">Вес</div>
+                                    <div class="param__desc">215 грамм</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__info">
+                            <div class="product__cost">14 990 ₽</div>
+                            <a class="button">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow arrow--right">
+                    <a href="#" class="arrow__img" id="right">
+                        <svg class="arrow__link-item">
+                            <use xlink:href="./img/icons/sprite.svg#arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section reviews-section" id="reviews">
             <div class="container">
                 <h2 class="section__title">Отзывы</h2>
                 <div class="reviews">
@@ -202,7 +264,7 @@
                 </div>
             </div>
         </section>
-        <section class="section order-section section--font--color--white">
+        <section class="section order-section section--font--color--white" id="order">
             <div class="container">
                 <div class="section__title order__title">Закажите доставку</div>
                 <form class="form">
@@ -276,7 +338,7 @@
                 </form>
             </div>
         </section>
-        <section class="section map-section">
+        <section class="section map-section" id="map">
             <img src="./img/content/map.png" alt="map" class="map">
             <footer class="footer">
                 <div class="container footer__container">
@@ -334,5 +396,6 @@
             <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
         </ul>
     </nav>
+    <script src="js/script.js"></script>
 </body>
 </html>

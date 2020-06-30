@@ -1,0 +1,40 @@
+.arrow {
+    display: flex;
+    align-items: center;
+
+    @include tablets {
+        position: absolute;
+
+        &--left {
+            left: 18%;
+            top: 36%;
+        }
+    
+        &--right {
+            right: 19%;
+            top: 36%;
+        }
+    }
+
+    @include phones {
+
+        &--left {
+            left: 1%;
+            top: 33%;
+        }
+
+        &--right {
+            right: 1%;
+            top: 33%;
+        }
+    }
+}
+
+.arrow__link-item {
+    width: 13px;
+    height: 28px;
+
+    &--left {
+        transform: rotate(180deg);
+    }
+}

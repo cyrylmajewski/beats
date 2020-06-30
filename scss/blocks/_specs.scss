@@ -1,0 +1,25 @@
+.specs {
+    margin-bottom: rem(24px);
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.specs__block {
+    width: 90px;
+    height: 90px;
+    background-color: #9a9a9a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: rem(10px);
+}
+
+.specs__block-item {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
