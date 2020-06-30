@@ -22,10 +22,15 @@ openHamburger.addEventListener("click", e => {
 cross.addEventListener("click", e => {
     e.preventDefault();
     // menu.style.display = "none";
+    let flag = true;
     menu.classList.remove("open");
-    setTimeout(function() {
-        toggleClass(menu, "hidden");
-    }, 1000);
+    if(flag) {
+        flag = false;
+        setTimeout(function() {
+            toggleClass(menu, "hidden");
+            flag = true;
+        }, 100);
+    }
 });
 
 jQuery(document).ready(function(){
