@@ -33,15 +33,25 @@ cross.addEventListener("click", e => {
     }
 });
 
-jQuery(document).ready(function(){
+$(document).ready(function(){
     function classFunction(){
-      if(jQuery('body').width()<769){ jQuery('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
+      if($('body').width()<769){ $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
       }
       else{
-        jQuery('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
+        $('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
       }
     }
     
     classFunction();
-    jQuery(window).resize(classFunction);
-   })
+    $(window).resize(classFunction);
+   });
+
+$(".team__link").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.next().toggleClass("team__open");
+    if($(".team__desc").hasClass("team__open")) {
+        $(".team__desc").removeClass("team__open");
+        $this.next().toggleClass("team__open");
+    }
+});
