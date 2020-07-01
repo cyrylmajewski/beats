@@ -978,6 +978,10 @@ img {
   margin-right: 1.5625rem;
 }
 
+.team__list {
+  display: flex;
+}
+
 .arrow {
   display: flex;
   align-items: center;
