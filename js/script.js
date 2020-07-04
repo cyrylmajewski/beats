@@ -33,16 +33,17 @@ cross.addEventListener("click", e => {
     }
 });
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
     function classFunction(){
-      if($('body').width()<769){ $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
+      if(jQuery('body').width()<769){ jQuery('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
       }
       else{
-        $('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
+        jQuery('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
       }
     }
     
     classFunction();
+<<<<<<< HEAD
     $(window).resize(classFunction);
    });
 
@@ -87,3 +88,7 @@ left.addEventListener("click", e => {
         list.style.right = `${currentRight}px`;
     }
 });
+=======
+    jQuery(window).resize(classFunction);
+   })
+>>>>>>> parent of 635ae8e... team section js
