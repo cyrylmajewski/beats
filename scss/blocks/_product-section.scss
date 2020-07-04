@@ -23,6 +23,19 @@
     }
 }
 
+.product__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 0;
+}
+
+.product__item {
+    width: 962px;
+    display: flex;
+}
+
 .product__content {
     display: flex;
     flex-direction: column;

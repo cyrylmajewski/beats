@@ -55,3 +55,8 @@ $(".team__link").on("click", function(e) {
         $this.next().toggleClass("team__open");
     }
 });
+
+//SLIDER 
+
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
