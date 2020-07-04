@@ -60,3 +60,30 @@ $(".team__link").on("click", function(e) {
 
 const left = document.querySelector("#left");
 const right = document.querySelector("#right");
+const list = document.querySelector("#product__list");
+const styles = window.getComputedStyle(list); 
+
+let currentRight = 0;
+const minRight = 0;
+const maxRight = 962;
+const step = 962;
+
+list.style.right = currentRight;
+
+
+right.addEventListener("click", e => {
+    e.preventDefault();
+    if(currentRight < maxRight) {
+        currentRight += step;
+        list.style.right = `${currentRight}px`;
+    }
+});
+
+left.addEventListener("click", e => {
+    e.preventDefault();
+
+    if(currentRight > minRight) {
+        currentRight -= step;
+        list.style.right = `${currentRight}px`;
+    }
+});
