@@ -709,8 +709,20 @@ img {
   z-index: 1;
 }
 
+.reviews__list {
+  position: relative;
+  min-height: 280px;
+}
+
 .reviews__item {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
 }
 
 .reviews__display-item {
@@ -852,7 +864,9 @@ img {
 }
 
 .active {
-  display: block;
+  position: static;
+  opacity: 1;
+  pointer-events: unset;
 }
 
 .order-section {
