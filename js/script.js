@@ -33,14 +33,14 @@ cross.addEventListener("click", e => {
     }
 });
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
     function classFunction(){
       if($('body').width()<769)
       { 
           $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
       }
       else{
-        $('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
+        jQuery('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
       }
     }
     
@@ -90,6 +90,7 @@ left.addEventListener("click", e => {
 
     if(currentRight > minRight) {
         currentRight -= step;
-        list.style.right = `${currentRight}px`;
+        list.style.right = `${currentRight}%`;
     }
 });
+
