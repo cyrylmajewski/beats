@@ -901,7 +901,6 @@ img {
   align-items: center;
   position: relative;
   right: 0;
-  transition: right 0.8s;
 }
 
 .product__item {
@@ -1005,11 +1004,11 @@ img {
     position: absolute;
   }
   .arrow--left {
-    left: 30%;
+    left: 18%;
     top: 36%;
   }
   .arrow--right {
-    right: 30%;
+    right: 19%;
     top: 36%;
   }
 }

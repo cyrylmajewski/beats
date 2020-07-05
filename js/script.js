@@ -61,6 +61,7 @@ $(".team__link").on("click", function(e) {
 
 const left = document.querySelector("#left");
 const right = document.querySelector("#right");
+<<<<<<< HEAD
 const list = document.querySelector("#product__list");
 const styles = window.getComputedStyle(list); 
 
@@ -92,3 +93,5 @@ left.addEventListener("click", e => {
     jQuery(window).resize(classFunction);
    })
 >>>>>>> parent of 635ae8e... team section js
+=======
+>>>>>>> parent of 45e15b0... arrow changes
