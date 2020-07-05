@@ -1,0 +1,52 @@
+.team__container {
+    max-width: 960px;
+}
+
+.team__list {
+    display: flex;
+}
+
+.team__item {
+    width: calc(100%/4);
+    min-height: 445px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team__link-img {
+    width: 9px;
+    height: 7px;
+}
+
+.team__img {
+    margin-bottom: rem(25px);
+}
+
+.team__name {
+    font-size: rem($baseFontSize);
+    font-weight: 700;
+    color: #000;
+}
+
+.team__desc {
+    height: 0;
+    text-align: center;
+    overflow: hidden;
+    transition: height .2s;
+}
+
+.team__open {
+    height: 100%;
+}
+
+.team__app {
+    color: #000000;
+    margin-bottom: rem(15px);
+}

@@ -33,15 +33,63 @@ cross.addEventListener("click", e => {
     }
 });
 
-jQuery(document).ready(function(){
+$(document).ready(function(){
     function classFunction(){
-      if(jQuery('body').width()<769){ jQuery('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
+      if($('body').width()<769)
+      { 
+          $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
       }
       else{
-        jQuery('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
+        $('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
       }
     }
     
     classFunction();
-    jQuery(window).resize(classFunction);
-   })
+    $(window).resize(classFunction);
+
+    //TEAM SECTION
+    
+    
+   });
+
+$(".team__link").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.next().toggleClass("team__open");
+    if($(".team__desc").hasClass("team__open")) {
+        $(".team__desc").removeClass("team__open");
+        $this.next().toggleClass("team__open");
+    }
+});
+
+//SLIDER 
+
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
+const list = document.querySelector("#product__list");
+const styles = window.getComputedStyle(list); 
+
+let currentRight = 0;
+const minRight = 0;
+const maxRight = 100;
+const step = 100;
+
+list.style.right = `${currentRight}`;
+
+
+right.addEventListener("click", e => {
+    e.preventDefault();
+    if(currentRight < maxRight) {
+        currentRight += step;
+        list.style.right = `${currentRight}%`;
+    }
+});
+
+left.addEventListener("click", e => {
+    e.preventDefault();
+
+    if(currentRight > minRight) {
+        currentRight -= step;
+        list.style.right = `${currentRight}px`;
+    }
+});

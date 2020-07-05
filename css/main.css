@@ -213,8 +213,8 @@ img {
 }
 .menu__mobile .close {
   position: absolute;
-  right: 26px;
-  top: 32px;
+  right: 1.625rem;
+  top: 2rem;
 }
 .menu__mobile .close__item {
   width: 20px;
@@ -895,6 +895,26 @@ img {
   }
 }
 
+.product__list {
+  display: flex;
+  position: relative;
+  right: 0;
+  transition: right 0.8s;
+  min-width: 0;
+}
+
+.product__item {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .product__item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .product__content {
   display: flex;
   flex-direction: column;
@@ -978,9 +998,63 @@ img {
   margin-right: 1.5625rem;
 }
 
+.team__container {
+  max-width: 960px;
+}
+
+.team__list {
+  display: flex;
+}
+
+.team__item {
+  width: calc(100%/4);
+  min-height: 445px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__link-img {
+  width: 9px;
+  height: 7px;
+}
+
+.team__img {
+  margin-bottom: 1.5625rem;
+}
+
+.team__name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.team__desc {
+  height: 0;
+  text-align: center;
+  overflow: hidden;
+  transition: height 0.2s;
+}
+
+.team__open {
+  height: 100%;
+}
+
+.team__app {
+  color: #000000;
+  margin-bottom: 0.9375rem;
+}
+
 .arrow {
   display: flex;
   align-items: center;
+  z-index: 100;
 }
 @media screen and (max-width: 768px) {
   .arrow {
@@ -991,7 +1065,7 @@ img {
     top: 36%;
   }
   .arrow--right {
-    right: 19%;
+    right: 18%;
     top: 36%;
   }
 }
@@ -1048,6 +1122,8 @@ img {
 
 .specs {
   margin-bottom: 1.5rem;
+  display: flex;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .specs {
@@ -1067,10 +1143,64 @@ img {
   margin-left: 0.625rem;
 }
 
+.specs:hover .dropdown {
+  left: 100px;
+  opacity: 1;
+}
+
 .specs__block-item {
   width: 35px;
   height: 35px;
   fill: #fff;
+}
+
+.dropdown {
+  background: #fff;
+  width: 100%;
+  max-width: 271px;
+  height: 281px;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.dropdown__list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.dropdown__item {
+  display: flex;
+  color: #000000;
+  margin-left: 22px;
+}
+
+.dropdown__img {
+  width: 33px;
+  height: 33px;
+  margin-right: 22px;
+}
+
+.dropdown__title {
+  width: 29%;
+}
+
+.dropdown__desc {
+  margin-left: 61px;
+}
+
+.dropdown__img-item {
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
 }
 
 .form {

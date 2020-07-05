@@ -23,6 +23,25 @@
     }
 }
 
+.product__list {
+    display: flex;
+    position: relative;
+    right: 0;
+    transition: right .8s;
+    min-width: 0;
+}
+
+.product__item {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .product__content {
     display: flex;
     flex-direction: column;
