@@ -9,6 +9,12 @@
     align-items: center;
     height: 100%;
     max-width: 988px;
+
+    .bx-wrapper {
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
 }
 
 .product {
@@ -24,23 +30,20 @@
 }
 
 .product__list {
-    display: flex;
     position: relative;
-    right: 0;
-    transition: right .8s;
     min-width: 0;
 }
 
 .product__item {
     display: flex;
-    flex: 0 0 100%;
     justify-content: center;
-
+    
     @include tablets {
         flex-direction: column;
         align-items: center;
     }
 }
+
 
 .product__content {
     display: flex;

@@ -46,12 +46,9 @@ $(document).ready(function(){
     
     classFunction();
     $(window).resize(classFunction);
-
-    //TEAM SECTION
-    
-    
    });
 
+//TEAM SECTION
 $(".team__link").on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
@@ -64,32 +61,42 @@ $(".team__link").on("click", function(e) {
 
 //SLIDER 
 
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
-const list = document.querySelector("#product__list");
-const styles = window.getComputedStyle(list); 
-
-let currentRight = 0;
-const minRight = 0;
-const maxRight = 100;
-const step = 100;
-
-list.style.right = `${currentRight}`;
-
-
-right.addEventListener("click", e => {
-    e.preventDefault();
-    if(currentRight < maxRight) {
-        currentRight += step;
-        list.style.right = `${currentRight}%`;
-    }
+const slider = $('.product__list').bxSlider({
+    pager: false,
+    controls: false
 });
 
-left.addEventListener("click", e => {
+$('.arrow--left').on("click", e => {
     e.preventDefault();
+    slider.goToPrevSlide();
+});
 
-    if(currentRight > minRight) {
-        currentRight -= step;
-        list.style.right = `${currentRight}px`;
-    }
+$('.arrow--right').on("click", e => {
+    e.preventDefault();
+    slider.goToNextSlide();
+});
+
+
+
+// REVIEWS
+
+const review = $('.reviews__item');
+const reviewSwitch = $('.reviews__switcher-link');
+
+const findBlockByAllias = allias => {
+    return review.filter((ndx, item) => {
+        return $(item).attr("data-linked-with") === allias;
+    });
+};
+
+reviewSwitch.on("click", e => {
+    e.preventDefault();
+    const $this = $(e.currentTarget);
+    const target = $this.attr("data-open");
+    const itemToShow = findBlockByAllias(target);
+    const currentItem = $this.closest('.reviews__switcher-item');
+
+    itemToShow.addClass("active").siblings().removeClass("active");
+
+    currentItem.addClass("active").siblings().removeClass("active");
 });
