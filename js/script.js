@@ -35,7 +35,9 @@ cross.addEventListener("click", e => {
 
 $(document).ready(function(){
     function classFunction(){
-      if($('body').width()<769){ $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
+      if($('body').width()<769)
+      { 
+          $('.menu').removeClass('menu').addClass('menu__mobile').addClass('hidden');
       }
       else{
         $('.menu__mobile').removeClass('menu__mobile').removeClass('hidden').addClass('menu');
@@ -44,6 +46,10 @@ $(document).ready(function(){
     
     classFunction();
     $(window).resize(classFunction);
+
+    //TEAM SECTION
+    
+    
    });
 
 $(".team__link").on("click", function(e) {
@@ -65,17 +71,17 @@ const styles = window.getComputedStyle(list);
 
 let currentRight = 0;
 const minRight = 0;
-const maxRight = 962;
-const step = 962;
+const maxRight = 100;
+const step = 100;
 
-list.style.right = currentRight;
+list.style.right = `${currentRight}`;
 
 
 right.addEventListener("click", e => {
     e.preventDefault();
     if(currentRight < maxRight) {
         currentRight += step;
-        list.style.right = `${currentRight}px`;
+        list.style.right = `${currentRight}%`;
     }
 });
 

@@ -1,17 +1,18 @@
 .arrow {
     display: flex;
     align-items: center;
+    z-index: 100;
 
     @include tablets {
         position: absolute;
 
         &--left {
-            left: 30%;
+            left: 18%;
             top: 36%;
         }
     
         &--right {
-            right: 30%;
+            right: 18%;
             top: 36%;
         }
     }
