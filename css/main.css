@@ -1029,6 +1029,12 @@ img {
 .team__list {
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  .team__list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .team__item {
   width: calc(100%/4);
@@ -1036,6 +1042,16 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .team__item {
+    width: auto;
+    min-height: 0;
+    margin-bottom: 24px;
+  }
+  .team__item:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .team__link {
@@ -1063,7 +1079,16 @@ img {
   height: 0;
   text-align: center;
   overflow: hidden;
-  transition: height 0.2s;
+  transition: height 0.4s;
+}
+@media screen and (max-width: 768px) {
+  .team__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+  }
 }
 
 .team__open {

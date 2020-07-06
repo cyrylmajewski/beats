@@ -44,20 +44,15 @@ $(document).ready(function(){
       }
     }
 
-    function addImg() {
-        const images = $('.team__img-item');
-        if($('body').width() < 769) {
-            $(".team__img-item").prependTo($('.team__desc'));
-        }
-    }
+    
     
     classFunction();
-    addImg();
     $(window).resize(classFunction);
-    $(window).resize(addImg);
    });
 
+
 //TEAM SECTION
+   //DESCRIPTION OPEN
 $(".team__link").on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
@@ -66,6 +61,20 @@ $(".team__link").on("click", function(e) {
         $(".team__desc").removeClass("team__open");
         $this.next().toggleClass("team__open");
     }
+});
+
+    //IMG TO DESCRIPTION
+$(window).on('resize load', function () {
+    
+    $(".team__item").each(function () {
+        var image = $(this).find('.team__img');
+        var info = $(this).find('.team__desc');
+        if ($(window).width() <= 768) {
+            info.prepend(image);
+        } else {
+            $(this).prepend(image);
+        }
+    });
 });
 
 //SLIDER 
