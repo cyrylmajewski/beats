@@ -1300,6 +1300,10 @@ img {
   outline: none;
 }
 
+.input-error {
+  border-color: #eb465fb6;
+}
+
 .form__controls {
   display: flex;
   flex-wrap: wrap;
@@ -1521,4 +1525,25 @@ img {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.modal {
+  display: none;
+}
+.modal.error-modal .modal__content {
+  color: red;
+}
+.modal.fancybox-content {
+  padding: 0 !important;
+}
+.modal .fancybox-button {
+  display: none;
+}
+
+.modal__container {
+  margin: auto;
+  padding: 35px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
