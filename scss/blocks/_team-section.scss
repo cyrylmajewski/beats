@@ -1,7 +1,7 @@
 .team-section {
     @include tablets {
         justify-content: flex-start;
-        padding-top: 40px;
+        padding-top: rem(40px);
     }
 }
 
@@ -28,7 +28,7 @@
     @include tablets {
         width: auto;
         min-height: 0;
-        margin-bottom: 24px;
+        margin-bottom: rem(24px);
         &:last-of-type {
             margin-bottom: 0;
         }

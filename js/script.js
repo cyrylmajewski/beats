@@ -189,3 +189,20 @@ $(".app-close-modal").on("click", e => {
     $.fancybox.close();
 });
 
+//COLOR SECTION
+$(".color__link").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.next().toggleClass("color__open");
+    if($(".color__desc").hasClass("color__open")) {
+        $(".color__desc").removeClass("color__open");
+        $this.next().toggleClass("color__open");
+    }
+});
+
+$(".color__close").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.closest(".color__desc").toggleClass("color__open");
+});
+
