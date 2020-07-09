@@ -42,8 +42,8 @@
 
     .close {
         position: absolute;
-        right: 26px;
-        top: 32px;
+        right: rem(26px);
+        top: rem(32px);
     }
     
     .close__item {

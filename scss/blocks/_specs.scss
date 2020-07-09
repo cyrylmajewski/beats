@@ -1,5 +1,7 @@
 .specs {
     margin-bottom: rem(24px);
+    display: flex;
+    position: relative;
 
     @include tablets {
         display: none;
@@ -16,6 +18,11 @@
     border-radius: 5px;
     cursor: pointer;
     margin-left: rem(10px);
+}
+
+.specs:hover .dropdown {
+    left: 100px;
+    opacity: 1;
 }
 
 .specs__block-item {
