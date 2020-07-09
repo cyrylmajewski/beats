@@ -1,3 +1,10 @@
+.team-section {
+    @include tablets {
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+}
+
 .team__container {
     max-width: 960px;
 }
@@ -50,10 +57,10 @@
 }
 
 .team__desc {
-    height: 0;
+    max-height: 0;
     text-align: center;
     overflow: hidden;
-    transition: height .4s;
+    transition: max-height .6s;
 
     @include tablets {
         display: flex;
@@ -65,7 +72,7 @@
 }
 
 .team__open {
-    height: 100%;
+    max-height: 100vh;
 }
 
 .team__app {
