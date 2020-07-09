@@ -161,8 +161,6 @@ $('.form').submit(e => {
                 comment: comment.val(),
                 to: to.val(),
             },
-            
-            
         });
 
         request.done(data => {
