@@ -1394,6 +1394,7 @@ img {
   right: 0;
   top: 0;
   bottom: 0;
+  transition: right 0.4s;
 }
 
 .color__item {
@@ -1404,6 +1405,11 @@ img {
   width: 100px;
   position: relative;
   background-color: #999999;
+}
+@media screen and (max-width: 480px) {
+  .color__link {
+    width: 80px;
+  }
 }
 .color__link--black {
   background-color: #151515;
@@ -1437,11 +1443,11 @@ img {
 }
 
 .color__desc {
-  max-width: 0px;
+  width: 0;
   background: rgba(51, 53, 55, 0.93);
   position: relative;
   overflow: hidden;
-  transition: max-width 0.7s;
+  transition: width 0.7s;
 }
 
 .color__desc-container {
@@ -1451,9 +1457,10 @@ img {
 .color__text {
   color: #fff;
 }
-
-.color__open {
-  max-width: 630px;
+@media screen and (max-width: 480px) {
+  .color__text {
+    font-size: 0.875rem;
+  }
 }
 
 .radio {
