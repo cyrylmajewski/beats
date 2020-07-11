@@ -25,6 +25,7 @@
     right: 0;
     top: 0;
     bottom: 0;
+    transition: right .4s;
 }
 
 .color__item {
@@ -35,6 +36,9 @@
     width: 100px;
     position: relative;
     background-color: #999999;
+    @include phones {
+        width: 80px;
+    }
 
     &--black {
         background-color: #151515;
@@ -68,11 +72,11 @@
 }
 
 .color__desc {
-    max-width: 0px;
+    width: 0;
     background: rgba(51, 53, 55, 0.93);
     position: relative;
     overflow: hidden;
-    transition: max-width .7s;
+    transition: width .7s;
 }
 
 .color__desc-container {
@@ -81,8 +85,7 @@
 
 .color__text {
     color: #fff;
-}
-
-.color__open {
-    max-width: 630px;
+    @include phones {
+        font-size: rem(14px);
+    }
 }
