@@ -298,14 +298,13 @@ $(".color__close").on("click", e => {
 
 //  WHEEL JS
 
-
-
 let flag = false;
 const section = $(".section");
 const display = $(".main-content");
 const sideMenu = $(".fixed-menu");
 const menuItem = $(".fixed-menu__item");
-
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
 section.first().addClass("activeSection");
 
@@ -423,6 +422,8 @@ $(window).on("keydown", e => {
     
 });
 
+$(".wrapper").on("touchmove", e => e.preventDefault());
+
 $("[data-scroll-to]").on("click", e => {
     e.preventDefault();
 
@@ -432,3 +433,24 @@ $("[data-scroll-to]").on("click", e => {
 
     transition(reqSection.index());
 });
+
+
+//MOBILE FUNCTIONALITY
+//https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+if(isMobile) {
+    $("body").swipe( {
+        //Generic swipe handler for all directions
+        swipe:function(
+            event,
+            direction,
+        ) {
+          const scroller = viewScroller();
+          let scrollDirection = "";
+    
+          if(direction === "up") scrollDirection = "next";
+          if(direction === "down") scrollDirection = "prev";
+    
+          scroller[scrollDirection]();
+        }
+    });
+}
