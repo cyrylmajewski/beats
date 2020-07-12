@@ -435,15 +435,20 @@ $("[data-scroll-to]").on("click", e => {
 
 //MOBILE FUNCTIONALITY
 //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
-    $("body").swipe({
-        //Generic swipe handler for all directions
-        swipe: function(event, direction) {
-          const scroller = viewScroller();
-          let scrollDirection = "";
-    
-          if(direction === "up") {scrollDirection = "next";}
-          if(direction === "down") {scrollDirection = "prev";}
-    
-          scroller[scrollDirection]();
-        },
-    });
+
+$("body").swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction) {
+      const scroller = viewScroller();
+      let scrollDirection = "";
+
+      if(direction === "up") {
+          scrollDirection = "next";
+      }
+      if(direction === "down") {
+          scrollDirection = "down";
+      }
+
+      scroller[scrollDirection]();
+    }
+  });
