@@ -235,9 +235,7 @@ const closeItem = item => {
         if($(window).width() <= 480) {
             setTimeout(rightPos, 500, list, 0);
         }
-        setTimeout(function() {
-            desc.width(0);
-        }, 200);
+        desc.width(0);
         item.removeClass("active");
 };
 
@@ -300,79 +298,129 @@ $(".color__close").on("click", e => {
 
 //  WHEEL JS
 
-const section = $(".section");
-const display = $(".main-content");
+
 
 let flag = false;
+const section = $(".section");
+const display = $(".main-content");
+const sideMenu = $(".fixed-menu");
+const menuItem = $(".fixed-menu__item");
+
 
 section.first().addClass("activeSection");
 
-const countSectionPosition = sectionEq => {
-    return sectionEq * -100;
+const sectionPos = sectionEq => {
+    const pos = sectionEq * -100;
+
+    if(isNaN(pos)) {
+        console.error("Неверное значение в sectionPos");
+        return 0;
+    }
+
+    return pos;
+};
+
+const changeMenu = sectionEq => {
+    const currentSection = section.eq(sectionEq);
+    const menuTheme = currentSection.attr("data-sidemenu-theme");
+    const activeClass = "fixed-menu--black";
+
+    if(menuTheme === "black") {
+        sideMenu.addClass(activeClass);
+    }
+
+    else {
+        sideMenu.removeClass(activeClass);
+    }
+};
+
+const resetActiveClass = (item, itemEq, activeClass) => {
+    item.eq(itemEq).addClass(activeClass).siblings().removeClass(activeClass);
 };
 
 const transition = sectionEq => {
-    if(flag === false) {
-        flag = true;
-        const position = countSectionPosition(sectionEq);
-        display.css ({
-            transform: `translateY(${position}%)`
-        });
-    const fixedMenu = $(".fixed-menu");
-    section.eq(sectionEq).addClass("activeSection").siblings().removeClass("activeSection");
+
+    if (flag) return;
+
+    const transitionOver = 1000;
+    const mouseInertiaOver = 300;
     
+    flag = true;
+
+    const position = sectionPos(sectionEq); 
+    changeMenu(sectionEq);
+    
+
+    display.css ({
+        transform: `translateY(${position}%)`
+    });
+
+    const fixedMenu = $(".fixed-menu");
+
+    resetActiveClass(section, sectionEq, "activeSection");
+
+    
+
     
 
     setTimeout(() => {
         flag = false;
-        fixedMenu.
-        find(".fixed-menu__item").
-        eq(sectionEq).
-        addClass("fixed-menu__item--active").
-        siblings().removeClass("fixed-menu__item--active");
-    }, 1000);
-    }
+
+        resetActiveClass(menuItem, sectionEq, "fixed-menu__item--active");
+    }, transitionOver + mouseInertiaOver);
+    
 };
 
-const scrollView = direction => {
+const viewScroller = () => {
     const activeSection = section.filter(".activeSection");
     const nextSection = activeSection.next();
     const prevSection = activeSection.prev();
-    if(direction === "next" && nextSection.length) {
-        transition(nextSection.index());
-    }
 
-    if(direction === "prev" && prevSection.length) {
-        transition(prevSection.index());
-    }
+    return {
+        next() {
+            if(nextSection.length) {
+                transition(nextSection.index());
+            }
+        },
+        prev() {
+            if(prevSection.length) {
+                transition(prevSection.index());
+            }
+        }
+    };
+    
 };
 
 $(window).on("wheel", function(e) {
     const deltaY = e.originalEvent.deltaY;
+    const scroller = viewScroller();
     
     if(deltaY > 0) {
-        scrollView("next");
+        scroller.next();
     }
 
     else if(deltaY < 0)  {
-        scrollView("prev");
+        scroller.prev();
     }
 });
 
 $(window).on("keydown", e => {
     console.log(e.keyCode);
     const tagName = e.target.tagName.toLowerCase();
+    const userTypingInInput = tagName === "input" || tagName === "textarea";
+    const scroller = viewScroller();
 
-    if(tagName !== "input" && tagName !== "textarea") {
-        switch (e.keyCode) {
-            case 40:
-                scrollView("next");
-                break;
-            case 38:
-                scrollView("prev");
-                break;
-        }
+    if(userTypingInInput) return;
+
+    switch (e.keyCode) {
+        case 40:
+            scroller.next();
+            break;
+        case 38:
+            scroller.prev();
+            break;
     }
+    
 });
 
 $("[data-scroll-to]").on("click", e => {

@@ -7,6 +7,26 @@
     @include tablets {
         display: none;
     }
+
+    &--black {
+        .fixed-menu__link {
+            &:before {
+                background: black;
+            }
+        }
+        
+        .fixed-menu__item {
+            &--active {
+                .fixed-menu__link {
+                    border-color: black;
+
+                    &:before {
+                        background: black;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .fixed-menu__item {
