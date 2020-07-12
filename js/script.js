@@ -12,7 +12,6 @@ function toggleClass(elem, classElem) {
 
 openHamburger.addEventListener("click", e => {
     e.preventDefault();
-    // menu.style.display = "block";
     menu.classList.remove("hidden");
     setTimeout(function() {
         toggleClass(menu, "open");
@@ -218,7 +217,9 @@ const openItem = item => {
     const desc = item.find(".color__desc");
     const descWidth = mesureWidth(item);
     desc.width(descWidth);
-    item.addClass("active");
+    setTimeout(function(){
+        item.addClass("active");
+    }, 400);
     if(item.siblings().hasClass("active")) {
         closeItem(item.siblings());
     }
@@ -239,7 +240,9 @@ const closeItem = item => {
 };
 
 const addWidth = (block, width, item) => {
-    item.addClass("active");
+    setTimeout(function(){
+        item.addClass("active");
+    }, 1000);
     return block.width(width);
 };
 
@@ -295,8 +298,66 @@ $(".color__close").on("click", e => {
 
 //  WHEEL JS
 
-// $(document).ready(function() {
-//     $("body").on("scroll", function(e) {
-//         console.log(event.deltaY);
-//     });
-// });
+const section = $(".section");
+const display = $(".main-content");
+
+let flag = false;
+
+section.first().addClass("activeSection");
+
+const transition = sectionEq => {
+    if(flag === false) {
+        flag = true;
+        const position = sectionEq * -100;
+        display.css ({
+            transform: `translateY(${position}%)`
+        });
+
+    section.eq(sectionEq).addClass("activeSection").siblings().removeClass("activeSection");
+    setTimeout(() => {
+        flag = false;
+    }, 1000);
+    }
+
+};
+
+const scrollView = direction => {
+    const activeSection = section.filter(".activeSection");
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
+    if(direction === "next" && nextSection.length) {
+        transition(nextSection.index());
+    }
+
+    if(direction === "prev" && prevSection.length) {
+        transition(prevSection.index());
+    }
+};
+
+$(window).on("wheel", function(e) {
+    const deltaY = e.originalEvent.deltaY;
+    
+    if(deltaY > 0) {
+        scrollView("next");
+    }
+
+    else if(deltaY < 0)  {
+        scrollView("prev");
+    }
+});
+
+$(window).on("keydown", e => {
+    console.log(e.keyCode);
+    const tagName = e.target.tagName.toLowerCase();
+
+    if(tagName !== "input" && tagName !== "textarea") {
+        switch (e.keyCode) {
+            case 40:
+                scrollView("next");
+                break;
+            case 38:
+                scrollView("prev");
+                break;
+        }
+    }
+});

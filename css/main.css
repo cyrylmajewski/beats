@@ -110,12 +110,18 @@ ul li {
 .wrapper {
   overflow: hidden;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 .wrapper__content {
   flex: 1;
+}
+
+.main-content {
+  height: 100%;
+  transition: transform 1s;
+  will-change: transform;
 }
 
 img {
@@ -1455,12 +1461,18 @@ img {
 }
 
 .color__text {
-  color: #fff;
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.2s;
 }
 @media screen and (max-width: 480px) {
   .color__text {
     font-size: 0.875rem;
   }
+}
+
+.active .color__text {
+  color: white;
+  transition: width 0.4s, color 0.4s 0.2s;
 }
 
 .radio {

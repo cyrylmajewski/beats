@@ -84,8 +84,14 @@
 }
 
 .color__text {
-    color: #fff;
+    color: rgba(255, 255, 255, 0);
+    transition: color .2s;
     @include phones {
         font-size: rem(14px);
     }
+}
+
+.active .color__text {
+    color: rgba(255, 255, 255, 1);
+    transition: width .4s, color .4s .2s;
 }
