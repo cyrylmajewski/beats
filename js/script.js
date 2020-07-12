@@ -235,7 +235,9 @@ const closeItem = item => {
         if($(window).width() <= 480) {
             setTimeout(rightPos, 500, list, 0);
         }
-        desc.width(0);
+        setTimeout(function() {
+            desc.width(0);
+        }, 200);
         item.removeClass("active");
 };
 
@@ -305,20 +307,31 @@ let flag = false;
 
 section.first().addClass("activeSection");
 
+const countSectionPosition = sectionEq => {
+    return sectionEq * -100;
+};
+
 const transition = sectionEq => {
     if(flag === false) {
         flag = true;
-        const position = sectionEq * -100;
+        const position = countSectionPosition(sectionEq);
         display.css ({
             transform: `translateY(${position}%)`
         });
-
+    const fixedMenu = $(".fixed-menu");
     section.eq(sectionEq).addClass("activeSection").siblings().removeClass("activeSection");
+    
+    
+
     setTimeout(() => {
         flag = false;
+        fixedMenu.
+        find(".fixed-menu__item").
+        eq(sectionEq).
+        addClass("fixed-menu__item--active").
+        siblings().removeClass("fixed-menu__item--active");
     }, 1000);
     }
-
 };
 
 const scrollView = direction => {
@@ -360,4 +373,14 @@ $(window).on("keydown", e => {
                 break;
         }
     }
+});
+
+$("[data-scroll-to]").on("click", e => {
+    e.preventDefault();
+
+    const $this = $(e.currentTarget);
+    const target = $this.attr("data-scroll-to");
+    const reqSection = $(`[data-section-id=${target}]`);
+
+    transition(reqSection.index());
 });
