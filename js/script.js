@@ -438,6 +438,6 @@ $("[data-scroll-to]").on("click", e => {
 $("body").swipe( {
     //Generic swipe handler for all directions
     swipe:function(event, direction) {
-      $(this).text("You swiped " + direction );  
+      alert(direction);  
     }
   });
