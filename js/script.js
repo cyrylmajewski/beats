@@ -303,8 +303,6 @@ const section = $(".section");
 const display = $(".main-content");
 const sideMenu = $(".fixed-menu");
 const menuItem = $(".fixed-menu__item");
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
 
 section.first().addClass("activeSection");
 
@@ -437,7 +435,6 @@ $("[data-scroll-to]").on("click", e => {
 
 //MOBILE FUNCTIONALITY
 //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
-if(isMobile) {
     $("body").swipe( {
         //Generic swipe handler for all directions
         swipe: function(event, direction) {
@@ -450,4 +447,3 @@ if(isMobile) {
           scroller[scrollDirection]();
         },
     });
-}
