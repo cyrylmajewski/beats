@@ -440,10 +440,7 @@ $("[data-scroll-to]").on("click", e => {
 if(isMobile) {
     $("body").swipe( {
         //Generic swipe handler for all directions
-        swipe:function(
-            event,
-            direction,
-        ) {
+        swipe: function(event, direction) {
           const scroller = viewScroller();
           let scrollDirection = "";
     
@@ -451,6 +448,6 @@ if(isMobile) {
           if(direction === "down") scrollDirection = "prev";
     
           scroller[scrollDirection]();
-        }
+        },
     });
 }
