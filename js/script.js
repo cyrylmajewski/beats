@@ -435,9 +435,3 @@ $("[data-scroll-to]").on("click", e => {
 
 //MOBILE FUNCTIONALITY
 //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
-$("body").swipe( {
-    //Generic swipe handler for all directions
-    swipe:function(event, direction) {
-      alert(direction);  
-    }
-  });
