@@ -405,7 +405,6 @@ $(window).on("wheel", function(e) {
 });
 
 $(window).on("keydown", e => {
-    console.log(e.keyCode);
     const tagName = e.target.tagName.toLowerCase();
     const userTypingInInput = tagName === "input" || tagName === "textarea";
     const scroller = viewScroller();
@@ -485,22 +484,7 @@ let togglePlay = (item, player) => {
 };
 
 /*VOLUME BUTTON*/
-const volumeButton = document.querySelector(".player__volume");
 
-let toggleVolume = (item, volumeButton) => {
-    let activeVolume = volumeButton.classList.contains("player__volume--active");
-    let volume = 0;
-    if(activeVolume) {
-        volumeButton.classList.remove("player__volume--active");
-        volume = 1;
-        return volume;
-    }
-    if(!activeVolume) {
-        volumeButton.classList.add("player__volume--active");
-        volume = 0;
-        return volume;
-    }
-};
 
 playButton.addEventListener("click", e => {
     togglePlay(video, player);
@@ -510,29 +494,72 @@ playerWrapper.addEventListener("click", e => {
     togglePlay(video, player);
 });
 
-volumeButton.addEventListener("click", e => {
-    video.volume = toggleVolume(video, volumeButton);
-});
+
 
 /*VIDEO PLAYBACK*/
-
-
 const duration = video.duration;
 const playbackButton = document.querySelector(".player__playback-button");
-const playback = document.querySelector(".player__playback");
 
-let playbackTime = () => {
+const playbackTime = () => {
     const currentTime = video.currentTime;
-    const currentPercent = (currentTime / duration) * 100;
-    playbackButton.style.left = `${currentPercent}%`;
+    const currentTimePercent = (currentTime / duration) * 100;
+    playbackButton.style.left = `${currentTimePercent}%`;
 };
+
+$(".player__playback").on("click", e => {
+    const bar = $(e.currentTarget);
+    const clickedPos = e.originalEvent.layerX;
+    const newButtonPosition = (clickedPos / bar.width()) * 100;
+    const newPlaybackPosition = (duration / 100) * newButtonPosition;
+
+    $(".player__playback-button").css({
+        left: `${newButtonPosition}%`
+    });
+
+    video.currentTime = newPlaybackPosition;
+});
 
 setInterval(playbackTime, 50);
 
-playback.addEventListener("click", e => {
-    const bar = (e.currentTarget);
-    const clickedPos = e.originalEvent.layerX;
+//VOLUME TRACK
 
-    console.log(clickedPos);
+const volumeButton = document.querySelector(".player__volume");
+
+let toggleVolume = (item, volumeButton, volumeButtonPos) => {
+    let activeVolume = volumeButton.classList.contains("player__volume--active");
+    let volume = 0;
+    if(activeVolume) {
+        volumeButton.classList.remove("player__volume--active");
+        volume = volumeButtonPos;
+        return volume;
+    }
+    if(!activeVolume) {
+        volumeButton.classList.add("player__volume--active");
+        volume = 0;
+        return volume;
+    }
+};
+
+video.volume = 1;
+let volumePercent = 100;
+const volumeDuration = 1;
+
+$(".player__volume-button").css({left: `${volumePercent}%`});
+
+$(".player__volume-track").on("click", e => {
+    const bar = $(e.currentTarget);
+    const clickedPos = e.originalEvent.layerX;
+    const newVolumePos = (clickedPos / bar.width()) * 100;
+    const newVolumeButtonPos = (volumeDuration / 100) * newVolumePos;
+    $(".player__volume-button").css({left: `${newVolumePos}%`});
+
+    video.volume = newVolumeButtonPos;
 });
+
+volumeButton.addEventListener("click", e => {
+    let volumePos = video.volume;
+    video.volume = toggleVolume(video, volumeButton, volumePos);
+});
+
+
 
