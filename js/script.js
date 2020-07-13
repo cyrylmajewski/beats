@@ -522,6 +522,9 @@ $(".player__playback").on("click", e => {
 setInterval(playbackTime, 50);
 
 //VOLUME TRACK
+video.volume = 1;
+let volumeFullPercent = 100;
+const volumeDuration = 1;
 
 const volumeButton = document.querySelector(".player__volume");
 
@@ -530,21 +533,19 @@ let toggleVolume = (item, volumeButton, volumeButtonPos) => {
     let volume = 0;
     if(activeVolume) {
         volumeButton.classList.remove("player__volume--active");
-        volume = volumeButtonPos;
+        volume = 1;
+        $(".player__volume-button").css({left: `${volumeFullPercent}%`});
         return volume;
     }
     if(!activeVolume) {
         volumeButton.classList.add("player__volume--active");
         volume = 0;
+        $(".player__volume-button").css({left: `0%`});
         return volume;
     }
 };
 
-video.volume = 1;
-let volumePercent = 100;
-const volumeDuration = 1;
-
-$(".player__volume-button").css({left: `${volumePercent}%`});
+$(".player__volume-button").css({left: `${volumeFullPercent}%`});
 
 $(".player__volume-track").on("click", e => {
     const bar = $(e.currentTarget);
