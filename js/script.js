@@ -458,3 +458,81 @@ if(isMobile) {
       });
 }
 
+//HTML5 VIDEO API
+
+let video = document.getElementById("video");
+const playButton = document.querySelector(".player__start");
+const player = document.querySelector(".player");
+const playerWrapper = document.querySelector(".player__wrapper");
+
+const playerSplash = document.querySelector(".player__splash");
+/*PLAY BUTTON*/
+let togglePlay = (item, player) => {
+    let activePlay = player.classList.contains("player--active");
+    if(activePlay) {
+        player.classList.remove("player--active");
+        if(video.currentTime !== 0) {
+            item.style.display = "block";
+            playerSplash.style.display = "none";
+        }
+        return item.pause();
+    }
+
+    if(!activePlay) {
+        player.classList.add("player--active");
+        return item.play();
+    }
+};
+
+/*VOLUME BUTTON*/
+const volumeButton = document.querySelector(".player__volume");
+
+let toggleVolume = (item, volumeButton) => {
+    let activeVolume = volumeButton.classList.contains("player__volume--active");
+    let volume = 0;
+    if(activeVolume) {
+        volumeButton.classList.remove("player__volume--active");
+        volume = 1;
+        return volume;
+    }
+    if(!activeVolume) {
+        volumeButton.classList.add("player__volume--active");
+        volume = 0;
+        return volume;
+    }
+};
+
+playButton.addEventListener("click", e => {
+    togglePlay(video, player);
+});
+
+playerWrapper.addEventListener("click", e => {
+    togglePlay(video, player);
+});
+
+volumeButton.addEventListener("click", e => {
+    video.volume = toggleVolume(video, volumeButton);
+});
+
+/*VIDEO PLAYBACK*/
+
+
+const duration = video.duration;
+const playbackButton = document.querySelector(".player__playback-button");
+const playback = document.querySelector(".player__playback");
+
+let playbackTime = () => {
+    const currentTime = video.currentTime;
+    const currentPercent = (currentTime / duration) * 100;
+    playbackButton.style.left = `${currentPercent}%`;
+};
+
+setInterval(playbackTime, 50);
+
+playback.addEventListener("click", e => {
+    const bar = (e.currentTarget);
+    const clickedPos = e.originalEvent.layerX;
+
+    console.log(clickedPos);
+});
+
