@@ -14,6 +14,7 @@ const gulpif = require('gulp-if');
 const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
+const { publish, callback } = require('gh-pages');
 const reload = browserSync.reload;
 
 const env = process.env.NODE_ENV;
@@ -21,6 +22,11 @@ const env = process.env.NODE_ENV;
 const {DIST_PATH, SRC_PATH, STYLES_LIBS, JS_LIBS} = require('./gulp.config');
 
 sass.compiler = require('node-sass');
+
+publish('dist', {
+    branch: 'gh-pages',
+    repo: 'https://github.com/crackthis/beats/tree/gh-pages'
+  }, callback);
 
 task( 'clean', () => {
     return src(`${DIST_PATH}/**/*`, { read: false }).pipe( rm() );
@@ -147,3 +153,5 @@ task(
     parallel("copy:html", "styles", "scripts", 
             "icons", "png_icons",  "images",
             "fonts", "video")));
+
+            
