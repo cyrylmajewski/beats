@@ -322,7 +322,7 @@ img {
 }
 @media screen and (max-width: 480px) {
   .section__title {
-    font-size: 2.25rem;
+    font-size: 2.1875rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -1035,6 +1035,10 @@ img {
   }
 }
 
+.team__title {
+  margin-bottom: 1.875rem;
+}
+
 .team__container {
   max-width: 960px;
 }
@@ -1060,10 +1064,15 @@ img {
   .team__item {
     width: auto;
     min-height: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.9375rem;
   }
   .team__item:last-of-type {
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team__item {
+    margin-bottom: 0.125rem;
   }
 }
 
@@ -1072,6 +1081,16 @@ img {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .team__link {
+    margin-bottom: 0.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team__link {
+    margin-bottom: 0.25rem;
+  }
+}
 
 .team__link-img {
   width: 9px;
@@ -1079,13 +1098,23 @@ img {
 }
 
 .team__img {
-  margin-bottom: 1.5625rem;
+  margin-bottom: 1.375rem;
+}
+@media screen and (max-width: 480px) {
+  .team__img {
+    width: 53%;
+  }
 }
 
 .team__name {
   font-size: 1.125rem;
   font-weight: 700;
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .team__name {
+    font-size: 1.125rem;
+  }
 }
 
 .team__desc {
@@ -1100,7 +1129,7 @@ img {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 260px;
+    max-width: 263px;
   }
 }
 
@@ -1133,11 +1162,11 @@ img {
 }
 @media screen and (max-width: 480px) {
   .arrow--left {
-    left: 1%;
+    left: 4%;
     top: 33%;
   }
   .arrow--right {
-    right: 1%;
+    right: 4%;
     top: 33%;
   }
 }
@@ -1433,7 +1462,7 @@ img {
   font-weight: 700;
   transform: rotateZ(-90deg) translate(50%);
   bottom: 0px;
-  right: -7.8125rem;
+  right: -7.1875rem;
 }
 
 .color__close {
@@ -1708,6 +1737,12 @@ img {
   top: 50%;
   left: 50%;
 }
+@media screen and (max-width: 480px) {
+  .player__splash-svg {
+    width: 31px;
+    height: 47px;
+  }
+}
 
 .player__start {
   cursor: pointer;
@@ -1724,6 +1759,12 @@ img {
 }
 .player__start-img--pause {
   display: none;
+}
+@media screen and (max-width: 480px) {
+  .player__start-img {
+    width: 10px;
+    height: 13px;
+  }
 }
 
 .player__controls {
@@ -1756,6 +1797,12 @@ img {
   padding: 0;
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  .player__playback-button {
+    width: 8px;
+    height: 8px;
+  }
+}
 
 .player__volume {
   display: flex;
@@ -1768,6 +1815,12 @@ img {
   width: 18px;
   height: 22px;
   fill: #fff;
+}
+@media screen and (max-width: 480px) {
+  .player__volume-img {
+    width: 11px;
+    height: 13px;
+  }
 }
 
 .player__volume-track {
@@ -1790,6 +1843,12 @@ img {
   top: 50%;
   padding: 0;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .player__volume-button {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .footer {

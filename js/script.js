@@ -426,7 +426,11 @@ $(".wrapper").on("touchmove", e => e.preventDefault());
 
 $("[data-scroll-to]").on("click", e => {
     e.preventDefault();
-
+    toggleClass(menu, "open");
+    setTimeout(function() {
+        toggleClass(menu, "hidden");
+        
+    }, 100);
     const $this = $(e.currentTarget);
     const target = $this.attr("data-scroll-to");
     const reqSection = $(`[data-section-id=${target}]`);
@@ -574,7 +578,7 @@ const init = () => {
             center: [55.731475, 37.608342],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
-            zoom: 14,
+            zoom: 12,
             controls: []
     });
 
