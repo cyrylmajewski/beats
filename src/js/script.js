@@ -464,108 +464,106 @@
     
     //HTML5 VIDEO API
     
-    let video = document.getElementById("video");
-    const playButton = document.querySelector(".player__start");
-    const player = document.querySelector(".player");
-    const playerWrapper = document.querySelector(".player__wrapper");
+    let video;
+    let durationControl;
+    let soundControl;
+    let intervalId;
+    let soundLevel;
+    const MAX_SOUND_VALUE = 10;
     
-    const playerSplash = document.querySelector(".player__splash");
-    /*PLAY BUTTON*/
-    let togglePlay = (item, player) => {
-        let activePlay = player.classList.contains("player--active");
-        if(activePlay) {
-            player.classList.remove("player--active");
-            if(video.currentTime !== 0) {
-                item.style.display = "block";
-                playerSplash.style.display = "none";
-            }
-            return item.pause();
+    $().ready(function(){
+        video = document.getElementById("video");
+
+        video.addEventListener('click', playStop);
+        let playButtons = document.querySelectorAll(".play");
+        let playButtonsLength = playButtons.length;
+
+        for(let i = 0; i < playButtonsLength; i++) {
+            playButtons[i].addEventListener("click", playStop);
         }
-    
-        if(!activePlay) {
-            player.classList.add("player--active");
-            return item.play();
+
+        let micControl = document.getElementById("mic");
+        micControl.addEventListener("click", soundOf);
+
+        durationControl = document.getElementById("durationLevel");
+        durationControl.addEventListener('mousedown', stopInterval);
+        durationControl.addEventListener('mouseup', setVideoDuration);
+
+        durationControl.min = 0;
+        durationControl.value = 0;
+
+        soundControl = document.getElementById("micLevel");
+
+        soundControl.addEventListener('mouseup', changeSoundVolume);
+
+        soundControl.min = 0;
+        soundControl.max = MAX_SOUND_VALUE;
+
+        video.addEventListener('ended', function() {
+
+        }, false);
+        
+    });
+
+    function playStop() {
+
+        document.querySelector(".player").classList.toggle("player--active");
+
+        durationControl.max = video.duration;
+
+
+        if (video.paused) {
+
+            video.play();
+            intervalId = setInterval(updateDuration, 1000/66);
         }
-    };
-    
-    /*VOLUME BUTTON*/
-    
-    
-    playButton.addEventListener("click", e => {
-        togglePlay(video, player);
-    });
-    
-    playerWrapper.addEventListener("click", e => {
-        togglePlay(video, player);
-    });
-    
-    
-    
-    /*VIDEO PLAYBACK*/
-    const duration = video.duration;
-    const playbackButton = document.querySelector(".player__playback-button");
-    
-    const playbackTime = () => {
-        const currentTime = video.currentTime;
-        const currentTimePercent = (currentTime / duration) * 100;
-        playbackButton.style.left = `${currentTimePercent}%`;
-    };
-    
-    $(".player__playback").on("click", e => {
-        const bar = $(e.currentTarget);
-        const clickedPos = e.originalEvent.layerX;
-        const newButtonPosition = (clickedPos / bar.width()) * 100;
-        const newPlaybackPosition = (duration / 100) * newButtonPosition;
-    
-        $(".player__playback-button").css({
-            left: `${newButtonPosition}%`
-        });
-    
-        video.currentTime = newPlaybackPosition;
-    });
-    
-    setInterval(playbackTime, 50);
-    
-    //VOLUME TRACK
-    video.volume = 1;
-    let volumeFullPercent = 100;
-    const volumeDuration = 1;
-    
-    const volumeButton = document.querySelector(".player__volume");
-    
-    let toggleVolume = (item, volumeButton, volumeButtonPos) => {
-        let activeVolume = volumeButton.classList.contains("player__volume--active");
-        let volume = 0;
-        if(activeVolume) {
-            volumeButton.classList.remove("player__volume--active");
-            volume = 1;
-            $(".player__volume-button").css({left: `${volumeFullPercent}%`});
-            return volume;
+
+        else {
+
+            stopInterval();
         }
-        if(!activeVolume) {
-            volumeButton.classList.add("player__volume--active");
-            volume = 0;
-            $(".player__volume-button").css({left: `0%`});
-            return volume;
+    }
+
+    function stopInterval() {
+        video.pause();
+
+        clearInterval(intervalId);
+    }
+
+    function setVideoDuration() {
+        video.currentTime = durationControl.value;
+        intervalId = setInterval(updateDuration, 1000/66);
+        
+        if(video.paused) {
+            video.play();
         }
-    };
+    }
+
+    function updateDuration() {
+        durationControl.value = video.currentTime;
+        console.log(video.currentTime);
+    }
+
+    function soundOf() {
+
+
+        if(video.volume === 0) {
+            video.volume = soundLevel;
+            soundControl.value = soundLevel * MAX_SOUND_VALUE;
+        }
+        else {
+            soundLevel = video.volume;
+            video.volume = 0;
+            soundControl.value = 0;
+        }
+    }
+
+    function changeSoundVolume() {
+        video.volume = soundControl.value / MAX_SOUND_VALUE;
+        console.log(video.volume);
+    }
     
-    $(".player__volume-button").css({left: `${volumeFullPercent}%`});
     
-    $(".player__volume-track").on("click", e => {
-        const bar = $(e.currentTarget);
-        const clickedPos = e.originalEvent.layerX;
-        const newVolumePos = (clickedPos / bar.width()) * 100;
-        const newVolumeButtonPos = (volumeDuration / 100) * newVolumePos;
-        $(".player__volume-button").css({left: `${newVolumePos}%`});
-    
-        video.volume = newVolumeButtonPos;
-    });
-    
-    volumeButton.addEventListener("click", e => {
-        let volumePos = video.volume;
-        video.volume = toggleVolume(video, volumeButton, volumePos);
-    });
     
     //YANDEX MAP
     let myMap;
@@ -579,7 +577,7 @@
                 center: [55.731475, 37.608342],
                 // Уровень масштабирования. Допустимые значения:
                 // от 0 (весь мир) до 19.
-                zoom: 12,
+                zoom: 14,
                 controls: []
         });
     
@@ -602,8 +600,9 @@
     
         myMap.geoObjects.add(myCollection);
         myMap.behaviors.disable('scrollZoom');
-        myMap.behavior.Drag('disable');
+        myMap.behaviors.disable('drag');
+        myMap.behaviors.disable('multiTouch');
     };
     
     ymaps.ready(init);
-})()
+})();

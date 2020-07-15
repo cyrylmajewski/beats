@@ -85,7 +85,7 @@ task("styles", () => {
 
 task('scripts', () => {
     return src([...JS_LIBS, `${SRC_PATH}/js/*.js`])
-        .pipe(gulpif(env === "prod", sourcemaps.init()))
+        .pipe(gulpif(env === "dev", sourcemaps.init()))
         .pipe(concat('main.min.js', {newLine: ";"}))
         .pipe(gulpif(env === "dev", babel({
             presets: ['@babel/env']
