@@ -1,8 +1,8 @@
 .order-section {
-    background: url(../../../beats/img/content/order_background.jpg) center center / cover no-repeat;
+    background: url(./img/content/order_background.jpg) center center / cover no-repeat;
     position: relative;
     &:after {
-        content: url(../../../beats/img/content/polygon.png);
+        content: url(./img/content/polygon.png);
         position: absolute;
         top: rem(-29px);
         right: 10%;

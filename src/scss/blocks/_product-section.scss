@@ -2,7 +2,7 @@
     background:#f5f5f5;
     flex-direction: row;
     &:after {
-        content: url("../../../beats/img/content/square.png");
+        content: url("./img/content/square.png");
         position: absolute;
         bottom: rem(-32px);
         right: 24.5%;

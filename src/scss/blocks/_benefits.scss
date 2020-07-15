@@ -21,7 +21,7 @@
 .benefits-section {
     position: relative;
     &:after {
-        content: url(../../../beats/img/content/red_triangle.png);
+        content: url(./img/content/red_triangle.png);
         position: absolute;
         bottom: rem(-14px);
         left: 7%;
@@ -56,7 +56,7 @@
     }
 
     &:before {
-        content: url(../../img/content/circles.png);
+        content: url(./img/content/circles.png);
         position: absolute;
         top: rem(30px);
         right: 0;
