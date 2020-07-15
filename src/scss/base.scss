@@ -54,7 +54,6 @@ html, body {
     }
 
     @include phones {
-        width: 96%;
         max-width: $phones;
     }
     
