@@ -27,6 +27,15 @@
     border-radius: 50%;
 }
 
+.duration__length::-webkit-range-thumb {
+    appearance: none;
+    cursor: pointer;
+    background: #e01f3d;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
 
 .duration__item {
     padding: 5px 20px;

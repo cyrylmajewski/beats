@@ -541,7 +541,6 @@
 
     function updateDuration() {
         durationControl.value = video.currentTime;
-        console.log(video.currentTime);
     }
 
     function soundOf() {
