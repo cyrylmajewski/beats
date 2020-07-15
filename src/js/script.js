@@ -497,8 +497,9 @@ if(isMobile) {
             if(direction === "down") {
                 scrollDirection = "down";
             }
-    
-            scroller[scrollDirection]();
+            if(scrollDirection) {
+                scroller[scrollDirection]();
+            }
         }
         });
 }
