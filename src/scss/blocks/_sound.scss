@@ -1,0 +1,16 @@
+.sound {
+    display: flex;
+    align-items: center;
+    margin: 0 rem(15px);
+}
+
+.sound__volume {
+    margin-left: rem(10px);
+    margin-top: rem(-5px);
+}
+
+.sound__item-img {
+    width: 18px;
+    height: 22px;
+    fill: #efebeb;
+}
