@@ -218,12 +218,10 @@ const openItem = item => {
     const desc = item.find(".color__desc");
     const descWidth = mesureWidth(item);
     desc.width(descWidth);
-    setTimeout(function(){
-        item.addClass("active");
-    }, 400);
     if(item.siblings().hasClass("active")) {
         closeItem(item.siblings());
     }
+    item.addClass("active");
 };
 
 const rightPos = (elem, pos) => {
