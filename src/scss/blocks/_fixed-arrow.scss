@@ -1,0 +1,25 @@
+.fixed-arrow {
+    position: fixed;
+    right: -9999px;
+    width: 30px;
+    height: 30px;
+    bottom: 50px;
+    cursor: pointer;
+    display: none;
+    transition: opacity .4s;
+    opacity: 0;
+    @include tablets {
+        display: block;
+    }
+}
+
+.fixed-arrow--active {
+    right: 10%;
+    transition: opacity .4s;
+    opacity: 1;
+}
+
+.fixed-arrow__img {
+    width: 100%;
+    height: 100%;
+}

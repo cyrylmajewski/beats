@@ -15,7 +15,7 @@ openHamburger.addEventListener("click", e => {
     menu.classList.remove("hidden");
     setTimeout(function() {
         toggleClass(menu, "open");
-    }, 100);
+    }, 300);
 });
 
 cross.addEventListener("click", e => {
@@ -28,7 +28,7 @@ cross.addEventListener("click", e => {
         setTimeout(function() {
             toggleClass(menu, "hidden");
             flag = true;
-        }, 100);
+        }, 300);
     }
 });
 
@@ -60,7 +60,6 @@ $(".team__link").on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
     $this.next().toggleClass("team__open");
-    $(".team__link-img").toggleClass("rotate");
     if($(".team__desc").hasClass("team__open")) {
         $(".team__desc").removeClass("team__open");
         $this.next().toggleClass("team__open");
@@ -383,7 +382,6 @@ const transition = sectionEq => {
     if (flag) return;
 
     const transitionOver = 1000;
-    const mouseInertiaOver = 300;
     
     flag = true;
 
@@ -407,7 +405,7 @@ const transition = sectionEq => {
         flag = false;
 
         resetActiveClass(menuItem, sectionEq, "fixed-menu__item--active");
-    }, transitionOver + mouseInertiaOver);
+    }, transitionOver);
     
 };
 

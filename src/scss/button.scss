@@ -9,6 +9,7 @@
     line-height: 1;
     display: inline-block;
     border: none;
+    cursor: pointer;
 
     &:hover {
         background-color: $darkRed;

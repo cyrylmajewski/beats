@@ -25,6 +25,10 @@
     &:last-of-type {
         margin-right: 0;
     }
+
+    &:hover {
+        color: $red;
+    }
 }
 
 .menu__mobile {
@@ -49,6 +53,8 @@
     .close__item {
         width: 20px;
         height: 20px;
+        fill: #fff;
+        opacity: 0.7;
     }
 
     .menu__list {
